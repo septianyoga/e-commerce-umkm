@@ -13,11 +13,6 @@
     <link rel="stylesheet" href="<?= base_url('template/backend/html/') ?>assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="<?= base_url('template/backend/html/') ?>assets/vendor/line-awesome/dist/line-awesome/css/line-awesome.min.css">
     <link rel="stylesheet" href="<?= base_url('template/backend/html/') ?>assets/vendor/remixicon/fonts/remixicon.css">
-    <!-- sweet alert -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-default@4/default.css">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
-    <!-- css loader -->
-    <!-- <link rel="stylesheet" href="<?= base_url('asset/css/loading.css') ?>"> -->
     <style>
         .lds-ellipsis {
             display: flex;
@@ -107,51 +102,7 @@
     </style>
 </head>
 
-<body class="bg-load" id="loader">
-    <div class="lds-ellipsis" id="spinner">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-    <?php if (session()->getFlashdata('fail')) { ?>
-        <script>
-            Swal.fire({
-                icon: 'error',
-                text: 'Username atau Password Salah!',
-                footer: '<a href="">Lupa Password ?</a>'
-            })
-        </script>
-    <?php } ?>
-    <?php if (session()->getFlashdata('pesan')) { ?>
-        <script>
-            Swal.fire(
-                'Gagal!',
-                'Anda Harus Login Terlebih Dahulu',
-                'info'
-            )
-        </script>
-    <?php } ?>
-    <?php if (session()->getFlashdata('berhasil')) { ?>
-        <script>
-            Swal.fire(
-                'Berhasil!',
-                '<?= session()->getFlashdata('berhasil') ?>',
-                'success'
-            )
-        </script>
-    <?php } ?>
-    <?php if (session()->getFlashdata('logout')) { ?>
-        <script>
-            Swal.fire({
-                position: 'top-end',
-                icon: 'success',
-                title: 'Logout Berhasil',
-                showConfirmButton: false,
-                timer: 1500
-            })
-        </script>
-    <?php } ?>
+<body class=" ">
     <!-- loader Start -->
     <!-- <div id="loading">
         <div id="loading-center">
@@ -159,18 +110,25 @@
     </div> -->
     <!-- loader END -->
 
+    <div class="lds-ellipsis" id="spinner">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
     <div class="wrapper">
         <section class="login-content">
             <div class="container">
                 <div class="row align-items-center justify-content-center height-self-center">
                     <div class="col-lg-8">
-                        <h2 class="mb-2 text-center">UMKM Rasa Alami</h2>
-                        <div class="card auth-card ">
+                        <div class="card auth-card">
                             <div class="card-body p-0">
                                 <div class="d-flex align-items-center auth-content">
                                     <div class="col-lg-7 align-self-center">
                                         <div class="p-3">
-                                            <h2 class="mb-2">Log In</h2>
+                                            <h2 class="mb-2">Sign Up</h2>
+                                            <p>Daftarkan Akun Anda.</p>
                                             <?php
                                             $errors = session()->getFlashdata('errors');
                                             if (!empty($errors)) { ?>
@@ -182,28 +140,55 @@
                                                     </ul>
                                                 </div>
                                             <?php  } ?>
-                                            <p>Silahkan Login menggunakan akun anda.</p>
-                                            <form action="<?= base_url('auth/login') ?>" method="post" onsubmit="showLoading()">
-                                                <div class="row">
-                                                    <div class="col-lg-12">
-                                                        <div class="floating-label form-group">
-                                                            <input class="floating-input form-control" name="username" type="text" placeholder=" ">
-                                                            <label>Username</label>
-                                                        </div>
+                                            <form action="<?= base_url('auth/daftar') ?>" method="post">
+                                                <div class="input-group mb-4">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon1">Nama</span>
                                                     </div>
-                                                    <div class="col-lg-12">
-                                                        <div class="floating-label form-group">
-                                                            <input class="floating-input form-control" name="password" type="password" placeholder=" ">
-                                                            <label>Password</label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-12">
-                                                        <a href="auth-recoverpw.html" class="text-primary float-right">Lupa Password?</a>
-                                                    </div>
+                                                    <input type="text" class="form-control" name="nama_user" placeholder="Masukan Nama">
                                                 </div>
-                                                <button type="submit" class="btn btn-primary">Log in</button>
+                                                <div class="input-group mb-4">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon1">@</span>
+                                                    </div>
+                                                    <input type="text" class="form-control" name="username" placeholder="Username">
+                                                </div>
+                                                <div class="input-group mb-4">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon1">Email</span>
+                                                    </div>
+                                                    <input type="email" class="form-control" name="email" placeholder="Masukan Email">
+                                                </div>
+                                                <div class="input-group mb-4">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon1">#</span>
+                                                    </div>
+                                                    <input type="password" class="form-control" name="password" placeholder="Masukan Password">
+                                                </div>
+                                                <div class="input-group mb-4">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon1">No Telp</span>
+                                                    </div>
+                                                    <input type="number" class="form-control" name="no_telp" placeholder="Masukan Nomor Telpon">
+                                                </div>
+                                                <div class="input-group mb-4">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text text-area">Alamat</span>
+                                                    </div>
+                                                    <textarea class="form-control" name="alamat" aria-label="With textarea"></textarea>
+                                                </div>
+                                                <div class="input-group mb-2">
+                                                    <div class="input-group-prepend">
+                                                        <label class="input-group-text" for="inputGroupSelect01">Daftar Sebagai</label>
+                                                    </div>
+                                                    <select class="custom-select" name="role" id="inputGroupSelect01">
+                                                        <option value="User">Pembeli</option>
+                                                        <option value="Reseller">Reseller</option>
+                                                    </select>
+                                                </div>
+                                                <button type="submit" class="btn btn-primary mt-2">Sign Up</button>
                                                 <p class="mt-3">
-                                                    Belum Mempunyai Akun ? <a href="<?= base_url('auth/regist') ?>" class="text-primary" onclick="showLoading()">Daftar Sekarang.</a>
+                                                    Sudah mempunyai akun ? <a href="<?= base_url('auth') ?>" onclick="showLoading()" class="text-primary">Login</a>
                                                 </p>
                                             </form>
                                         </div>
@@ -234,13 +219,6 @@
 
     <!-- app JavaScript -->
     <script src="<?= base_url('template/backend/html/') ?>assets/js/app.js"></script>
-    <script>
-        window.setTimeout(function() {
-            $(".alert").fadeTo(1500, 0).slideUp(1500, function() {
-                $(this).remove();
-            });
-        }, 4000);
-    </script>
     <script>
         window.onload = function() {
             document.getElementById("spinner").style.display = "none";

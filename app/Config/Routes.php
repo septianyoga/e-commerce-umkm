@@ -38,6 +38,8 @@ $routes->get('admin', 'Admin::index');
 $routes->get('auth', 'Auth::index');
 $routes->post('auth/login', 'Auth::login');
 $routes->get('auth/logout', 'Auth::logout');
+$routes->get('auth/regist', 'Auth::regist');
+$routes->post('auth/daftar', 'Auth::daftar');
 
 // page produk
 $routes->get('produk', 'Produk::index');
