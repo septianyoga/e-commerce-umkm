@@ -40,7 +40,7 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td><?= $row['harga_produk'] ?></td>
+                                    <td>Rp. <?= number_format($row['harga_produk'], 0, ",", ".") ?></td>
                                     <td><?= $row['stok_produk'] ?></td>
                                     <td><?= $row['status_produk'] ?></td>
                                     <td>

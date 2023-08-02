@@ -63,6 +63,13 @@ class Produk extends BaseController
                     'required' => '{field} Wajib Diisi.',
                 ],
             ],
+            'berat' => [
+                'label' => 'Berat Produk',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} Wajib Diisi.',
+                ],
+            ],
             'deskripsi_produk' => [
                 'label' => 'Deskripsi Produk',
                 'rules' => 'required',
@@ -84,6 +91,7 @@ class Produk extends BaseController
         $data = [
             'nama_produk'       => $this->request->getPost('nama_produk'),
             'harga_produk'      => $this->request->getPost('harga_produk'),
+            'berat'             => $this->request->getPost('berat'),
             'foto_produk'       => $nama_foto,
             'stok_produk'       => $this->request->getPost('stok_produk'),
             'deskripsi_produk'  => $this->request->getPost('deskripsi_produk'),
@@ -126,6 +134,13 @@ class Produk extends BaseController
                     'required' => '{field} Wajib Diisi.',
                 ],
             ],
+            'berat' => [
+                'label' => 'Berat Produk',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} Wajib Diisi.',
+                ],
+            ],
             'deskripsi_produk' => [
                 'label' => 'Deskripsi Produk',
                 'rules' => 'required',
@@ -145,6 +160,7 @@ class Produk extends BaseController
             $data = [
                 'nama_produk'       => $this->request->getPost('nama_produk'),
                 'harga_produk'      => $this->request->getPost('harga_produk'),
+                'berat'             => $this->request->getPost('berat'),
                 'stok_produk'       => $this->request->getPost('stok_produk'),
                 'deskripsi_produk'  => $this->request->getPost('deskripsi_produk'),
                 'status_produk'     => $this->request->getPost('status_produk'),
@@ -155,6 +171,7 @@ class Produk extends BaseController
             $data = [
                 'nama_produk'       => $this->request->getPost('nama_produk'),
                 'harga_produk'      => $this->request->getPost('harga_produk'),
+                'berat'             => $this->request->getPost('berat'),
                 'foto_produk'       => $nama_foto,
                 'stok_produk'       => $this->request->getPost('stok_produk'),
                 'deskripsi_produk'  => $this->request->getPost('deskripsi_produk'),

@@ -20,17 +20,17 @@ Index Of Script
 ------------------------------------------------
 Index Of Script
 ----------------------------------------------*/
-(function(jQuery) {
+(function (jQuery) {
     "use strict";
 
     const header = document.querySelector('#iq-menu-container')
-        if (header !== null) {
+    if (header !== null) {
         const headerActiveItem = header.querySelectorAll('.current-menu-item')
         Array.from(headerActiveItem, (elem) => {
-            if (elem.closest('.sub-menu') !== null){
+            if (elem.closest('.sub-menu') !== null) {
                 const childMenu = elem.closest('.current-menu-item').parentElement.parentElement
                 const sections = header.querySelectorAll('.active');
-                for (let i = 0; i < sections.length; i++){
+                for (let i = 0; i < sections.length; i++) {
                     sections[i].classList.remove('active');
                 }
                 childMenu.classList.add('active')
@@ -46,35 +46,35 @@ Index Of Script
         document.querySelector('.iq-height').style.height = height + 'px';
     }
 
-    let navbar =  document.querySelector(".header1"),
+    let navbar = document.querySelector(".header1"),
         yOffset = 0,
         triggerPoint = 80;
     headerHeight();
 
-    window.addEventListener('resize',headerHeight);
-    window.addEventListener('scroll', function() {
+    window.addEventListener('resize', headerHeight);
+    window.addEventListener('scroll', function () {
 
         yOffset = document.documentElement.scrollTop;
 
         if (yOffset >= triggerPoint) {
-            navbar.classList.add("menu-sticky","animated","slideInDown");
+            navbar.classList.add("menu-sticky", "animated", "slideInDown");
         } else {
-            navbar.classList.remove("menu-sticky","animated","slideInDown");
+            navbar.classList.remove("menu-sticky", "animated", "slideInDown");
         }
 
     });
 
     if (document.querySelector('header').classList.contains('has-sticky')) {
-    window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
 
-        var height = document.querySelector('.navbar').outerHeight;
-        if (document.documentElement.scrollTop > height) {
-            document.querySelector('.has-sticky .logo').classList.add('logo-display');
-        } else if (document.documentElement.scrollTop <= height) {
-            document.querySelector('.has-sticky .logo').classList.remove('logo-display');
-        }
-    });
-}
+            var height = document.querySelector('.navbar').outerHeight;
+            if (document.documentElement.scrollTop > height) {
+                document.querySelector('.has-sticky .logo').classList.add('logo-display');
+            } else if (document.documentElement.scrollTop <= height) {
+                document.querySelector('.has-sticky .logo').classList.remove('logo-display');
+            }
+        });
+    }
 
     /*---------------------------------------------------------------------
                   Top to Bottom
@@ -156,25 +156,25 @@ Index Of Script
     const alertButton = document.querySelectorAll('[data-alert="sweetalert-product"]')
     Array.from(alertButton, (btn) => {
         btn.addEventListener('click', () => {
-        swalWithBootstrapButtons.fire({
-            title: 'Added to cart!',
-            text: "Side Dish",
-            icon: 'success',
-            showCancelButton: true,
-            confirmButtonText: 'Continue shopping',
-            cancelButtonText: 'Checkout',
-            reverseButtons: true
-        }).then((result) => {
-            if (result.isConfirmed) {
-                btn.querySelector('.btn').innerHTML = 'View Cart <i aria-hidden="true" class="fas fa-long-arrow-alt-right ms-2"></i>'
-                return true
-            } else if (
-                /* Read more about handling dismissals below */
-                result.dismiss === Swal.DismissReason.cancel
-            ) {
-                window.location.replace('../checkout.html')
-            }
-        })
+            swalWithBootstrapButtons.fire({
+                title: 'Added to cart!',
+                text: "Side Dish",
+                icon: 'success',
+                showCancelButton: true,
+                confirmButtonText: 'Continue shopping',
+                cancelButtonText: 'Checkout',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    btn.querySelector('.btn').innerHTML = 'View Cart <i aria-hidden="true" class="fas fa-long-arrow-alt-right ms-2"></i>'
+                    return true
+                } else if (
+                    /* Read more about handling dismissals below */
+                    result.dismiss === Swal.DismissReason.cancel
+                ) {
+                    window.location.replace('../checkout.html')
+                }
+            })
         })
     })
 
@@ -182,9 +182,9 @@ Index Of Script
         sweet alert for heart
         -----------------------*/
 
-        const alertButton1 = document.querySelectorAll('[data-alert="sweetalert-heart"]')
-        Array.from(alertButton1, (btn) => {
-            btn.addEventListener('click', () => {
+    const alertButton1 = document.querySelectorAll('[data-alert="sweetalert-heart"]')
+    Array.from(alertButton1, (btn) => {
+        btn.addEventListener('click', () => {
             swalWithBootstrapButtons.fire({
                 title: 'Added to Wishlist!',
                 text: "Loved",
@@ -212,18 +212,18 @@ Index Of Script
     /*---------------------------------------------------------
                         Custom Scripts
     ----------------------------------------------------------*/
-  const btn = document.querySelector('#update-cart')
-  if (btn !== null) {
-    btn.addEventListener('click', (e) => {
-        const products = document.querySelectorAll('.product')
-        Array.from(products, (row) => {
-            const price = row.querySelector('.price').innerText
-            const qty = row.querySelector('.qty').value
-            let subTotal = Number(price) * Number(qty)
-            row.querySelector('.sub-total').innerText = subTotal
+    const btn = document.querySelector('#update-cart')
+    if (btn !== null) {
+        btn.addEventListener('click', (e) => {
+            const products = document.querySelectorAll('.product')
+            Array.from(products, (row) => {
+                const price = row.querySelector('.price').innerText
+                const qty = row.querySelector('.qty').value
+                let subTotal = Number(price) * Number(qty)
+                row.querySelector('.sub-total').innerText = subTotal
+            })
         })
-    })
-  }
+    }
     if (jQuery(window).width() < 1200) {
         jQuery('#top-menu .menu-item').on('click', function (e) {
             e.preventDefault();

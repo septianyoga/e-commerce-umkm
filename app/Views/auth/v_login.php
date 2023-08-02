@@ -201,7 +201,7 @@
                                                         <a href="auth-recoverpw.html" class="text-primary float-right">Lupa Password?</a>
                                                     </div>
                                                 </div>
-                                                <button type="submit" class="btn btn-primary">Log in</button>
+                                                <button type="submit" class="btn btn-warning">Log in</button>
                                                 <p class="mt-3">
                                                     Belum Mempunyai Akun ? <a href="<?= base_url('auth/regist') ?>" class="text-primary" onclick="showLoading()">Daftar Sekarang.</a>
                                                 </p>

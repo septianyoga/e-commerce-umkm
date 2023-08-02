@@ -22,6 +22,7 @@ class Filters extends BaseConfig
         'invalidchars'  => InvalidChars::class,
         'secureheaders' => SecureHeaders::class,
         'filteradmin'   => \App\Filters\FilterAdmin::class,
+        'filteruser'    => \App\Filters\FilterUser::class,
     ];
 
     /**
@@ -44,6 +45,18 @@ class Filters extends BaseConfig
                     '/admin',
                     '/produk',
                     '/produk/*',
+                ]
+            ],
+            'filteruser' => [
+                'except' => [
+                    '/',
+                    '/',
+                    '/product/*',
+                    '/product/*',
+                    '/cart',
+                    '/cart/*',
+                    '/checkout',
+                    '/checkout/*',
                 ]
             ],
         ],

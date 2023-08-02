@@ -21,6 +21,7 @@
                                     <h4 class="card-title"><?= $data['nama_produk'] ?></h4>
                                     <p class="card-text">Deskripsi : <?= $data['deskripsi_produk'] ?></p>
                                     <p class="card-text">Harga : Rp. <?= number_format($data['harga_produk'], 0, ",", ".") ?></p>
+                                    <p class="card-text">Berat : <?= $data['berat'] ?> gr.</p>
                                     <p class="card-text">Stok : <?= $data['stok_produk'] ?></p>
                                     <p class="card-text"><small class="text-muted">Status : <?= $data['status_produk'] ?></small></p>
                                 </div>
@@ -34,5 +35,7 @@
         <!-- Page end  -->
     </div>
 </div>
+</main>
+
 
 <?= $this->endSection() ?>

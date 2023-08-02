@@ -13,7 +13,7 @@ class ModelProduk extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['nama_produk', 'harga_produk', 'deskripsi_produk', 'foto_produk', 'stok_produk', 'status_produk'];
+    protected $allowedFields    = ['nama_produk', 'harga_produk', 'deskripsi_produk', 'berat', 'foto_produk', 'stok_produk', 'status_produk'];
 
     // Dates
     protected $useTimestamps = false;

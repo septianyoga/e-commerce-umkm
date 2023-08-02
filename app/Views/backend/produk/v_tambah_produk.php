@@ -39,16 +39,23 @@
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <div class="form-group">
-                                        <label>Foto Produk</label>
+                                        <label>Foto Produk *</label>
                                         <input type="file" class="form-control image-file" name="foto_produk">
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Berat * (satuan gram)</label>
+                                        <input type="number" class="form-control" name="berat" placeholder="Masukan Berat Produk (gr)" data-errors="Please Enter Code." required>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Stok *</label>
-                                        <input type="text" class="form-control" name="stok_produk" placeholder="Masukan Stok Produk" data-errors="Please Enter Code." required>
+                                        <input type="number" class="form-control" name="stok_produk" placeholder="Masukan Stok Produk" data-errors="Please Enter Code." required>
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>

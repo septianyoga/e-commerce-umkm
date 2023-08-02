@@ -1,0 +1,28 @@
+<?php
+
+namespace App\Controllers;
+
+use App\Controllers\BaseController;
+use App\Models\ModelCart;
+use App\Models\ModelUser;
+
+class Checkout extends BaseController
+{
+
+    protected $ModelCart, $ModelUser;
+
+    public function __construct()
+    {
+        $this->ModelCart = new ModelCart();
+        $this->ModelUser = new ModelUser();
+    }
+
+    public function index()
+    {
+        return view('frontend/checkout/v_checkout', [
+            'title' => 'Checkout',
+            'cart'  => session()->get('id_user') == null ? null : $this->ModelCart->join('produk', 'produk.id_produk = cart.id_produk')->where('cart.id_user', session()->get('id_user'))->findAll(),
+            'user'  => $this->ModelUser->find(session()->get('id_user'))
+        ]);
+    }
+}

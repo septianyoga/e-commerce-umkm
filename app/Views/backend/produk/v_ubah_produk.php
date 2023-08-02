@@ -25,17 +25,24 @@
                         <?php  } ?>
                         <form action="<?= base_url('produk/edit/' . $data['id_produk']) ?>" data-toggle="validator" method="post" enctype="multipart/form-data">
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Nama Produk *</label>
                                         <input type="text" class="form-control" name="nama_produk" placeholder="Masukan Nama Produk" data-errors="Please Enter Name." value="<?= $data['nama_produk'] ?>" required>
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Harga *</label>
                                         <input type="number" class="form-control" name="harga_produk" placeholder="Masukan Harga Produk" data-errors="Please Enter Code." value="<?= $data['harga_produk'] ?>" required>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Berat * (satuan gram)</label>
+                                        <input type="number" class="form-control" name="berat" placeholder="Masukan Berat Produk" data-errors="Please Enter Code." value="<?= $data['berat'] ?>" required>
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
@@ -51,7 +58,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Stok *</label>
-                                        <input type="text" class="form-control" name="stok_produk" placeholder="Masukan Stok Produk" data-errors="Please Enter Code." value="<?= $data['stok_produk'] ?>" required>
+                                        <input type="number" class="form-control" name="stok_produk" placeholder="Masukan Stok Produk" data-errors="Please Enter Code." value="<?= $data['stok_produk'] ?>" required>
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
@@ -61,7 +68,7 @@
                                         <textarea class="form-control" rows="4" name="deskripsi_produk" required><?= $data['deskripsi_produk'] ?></textarea>
                                     </div>
                                 </div>
-                                <div class="col-md-12">
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Status Produk <small>(Aktif artinya produk tersebut dapat dipesan)</small></label>
                                         <select name="status_produk" id="status_produk" class="form-control">
