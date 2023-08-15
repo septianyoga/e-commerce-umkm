@@ -4,16 +4,16 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class ModelCart extends Model
+class ModelOrders extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'cart';
-    protected $primaryKey       = 'id_cart';
+    protected $table            = 'orders';
+    protected $primaryKey       = 'id_order';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['id_produk', 'qty', 'id_user', 'id_order', 'status_cart'];
+    protected $allowedFields    = ['id_order', 'id_user', 'total_pembayaran', 'kurir', 'ongkir', 'resi', 'metode_pembayaran', 'bank', 'va_number', 'batas_transaksi', 'id_transaksi', 'status_pesanan'];
 
     // Dates
     protected $useTimestamps = false;
@@ -38,10 +38,4 @@ class ModelCart extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
-
-    public function edit($id_order)
-    {
-        $id_user = session()->get('id_user');
-        $this->db->query("UPDATE cart SET id_order = '$id_order', status_cart = 'Checkout' WHERE id_user = $id_user AND status_cart = 'Belum Checkout'");
-    }
 }

@@ -28,14 +28,14 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Nama Produk *</label>
-                                        <input type="text" class="form-control" name="nama_produk" placeholder="Masukan Nama Produk" data-errors="Please Enter Name." required>
+                                        <input type="text" class="form-control" name="nama_produk" placeholder="Contoh Kripik Pisang Sale" data-errors="Please Enter Name." required>
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Harga *</label>
-                                        <input type="number" class="form-control" name="harga_produk" placeholder="Masukan Harga Produk" data-errors="Please Enter Code." required>
+                                        <label>Harga *<small>(Tidak Memakai Titik)</small></label>
+                                        <input type="number" class="form-control" name="harga_produk" placeholder="Contoh : 100000" data-errors=" Please Enter Code." required>
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
@@ -48,21 +48,21 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Berat * (satuan gram)</label>
-                                        <input type="number" class="form-control" name="berat" placeholder="Masukan Berat Produk (gr)" data-errors="Please Enter Code." required>
+                                        <input type="number" class="form-control" name="berat" placeholder="Contoh : 500" data-errors="Please Enter Code." required>
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Stok *</label>
-                                        <input type="number" class="form-control" name="stok_produk" placeholder="Masukan Stok Produk" data-errors="Please Enter Code." required>
+                                        <input type="number" class="form-control" name="stok_produk" placeholder="Contoh : 20" data-errors="Please Enter Code." required>
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Description Produk</label>
-                                        <textarea class="form-control" rows="4" name="deskripsi_produk" required></textarea>
+                                        <textarea class="form-control" rows="4" name="deskripsi_produk" placeholder="Masukan Deskripsi Produk" required></textarea>
                                     </div>
                                 </div>
                             </div>

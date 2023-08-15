@@ -120,6 +120,15 @@
             })
         </script>
     <?php } ?>
+    <?php if (session()->getFlashdata('success')) { ?>
+        <script>
+            Swal.fire(
+                'Berhasil!',
+                '<?= session()->getFlashdata('success') ?>',
+                'success'
+            )
+        </script>
+    <?php } ?>
     <!-- loader Start -->
     <!-- <div id="loading">
         <div id="loading-center">

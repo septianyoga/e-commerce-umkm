@@ -6,20 +6,31 @@
             <div class="col-lg-12">
                 <div class="d-flex flex-wrap flex-wrap align-items-center justify-content-between mb-4">
                     <div>
-                        <h4 class="mb-3">List Produk</h4>
+                        <h4 class="mb-3">Paket Reseller</h4>
                     </div>
-                    <a href="<?= base_url('produk/tambah_produk') ?>" class="btn btn-primary add-list"><i class="las la-plus mr-1"></i>Tambah</a>
+                    <button type="button" class="btn btn-primary mt-2" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="las la-plus mr-1"></i>Tambah</button>
                 </div>
             </div>
             <div class="col-lg-12">
+                <?php
+                $errors = session()->getFlashdata('errors');
+                if (!empty($errors)) { ?>
+                    <div class="alert alert-danger" role="alert">
+                        <ul>
+                            <?php foreach ($errors as $key => $value) { ?>
+                                <li><?= esc($value); ?></li>
+                            <?php } ?>
+                        </ul>
+                    </div>
+                <?php  } ?>
                 <div class="table-responsive rounded mb-3">
                     <table class="data-tables table mb-0 tbl-server-info">
                         <thead class="bg-white text-uppercase">
                             <tr class="ligth ligth-data">
                                 <th>No</th>
-                                <th>Produk</th>
-                                <th>Harga</th>
-                                <th>Stok</th>
+                                <th>Nama Paket</th>
+                                <th>Harga Perpaket</th>
+                                <th>Berat</th>
                                 <th>Status</th>
                                 <th>Opsi</th>
                             </tr>
@@ -30,7 +41,7 @@
                             foreach ($data as $row) {
                             ?>
                                 <tr>
-                                    <td><?= $no++; ?></td>
+                                    <td><?= $no; ?></td>
                                     <td>
                                         <div class="d-flex align-items-center">
                                             <img src="<?= base_url('foto_produk/' . $row['foto_produk']) ?>" class="img-fluid rounded avatar-50 mr-3" alt="image" style="aspect-ratio: 4/3; object-fit: contain;">
@@ -41,7 +52,7 @@
                                         </div>
                                     </td>
                                     <td>Rp. <?= number_format($row['harga_produk'], 0, ",", ".") ?></td>
-                                    <td><?= $row['stok_produk'] ?></td>
+                                    <td><?= $row['berat'] ?> gr</td>
                                     <td><?= $row['status_produk'] ?></td>
                                     <td>
                                         <div class="d-flex align-items-center list-action">
@@ -92,6 +103,63 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+
+<!-- modal tambah -->
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Tambah Paket Reseller</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="<?= base_url('produk/add') ?>" data-toggle="validator" method="post" enctype="multipart/form-data">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Nama Paket *</label>
+                                <input type="text" class="form-control" name="nama_produk" placeholder="Contoh : Paket Reseller 20 pcs Kripik Pisang Sale" data-errors="Please Enter Name." required>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Harga Perpaket* <small>(Tidak Memakai Titik)</small></label>
+                                <input type="number" class="form-control" name="harga_produk" placeholder="Contoh : 100000" data-errors="Please Enter Code." required>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Foto Paket Produk *</label>
+                                <input type="file" class="form-control image-file" name="foto_produk">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Berat Paket* (satuan gram)</label>
+                                <input type="number" class="form-control" name="berat" placeholder="Contoh : 1000" data-errors="Please Enter Code." required>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Deskripsi Paket Produk</label>
+                                <textarea class="form-control" rows="4" name="deskripsi_produk" placeholder="Masukan Deskripsi Paket Produk" required></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                    <button type="sumbit" class="btn btn-primary">Tambah Paket Produk</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

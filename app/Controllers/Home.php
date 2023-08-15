@@ -20,7 +20,7 @@ class Home extends BaseController
     {
         return view('frontend/v_home', [
             'title' => 'Home',
-            'data'  => $this->ModelProduk->findAll(),
+            'data'  => session()->get('role') == 'Reseller' ? $this->ModelProduk->where('stok_produk', null)->findAll() : $this->ModelProduk->where('stok_produk !=', null)->findAll(),
             'cart'  => session()->get('id_user') == null ? null : $this->ModelCart->join('produk', 'produk.id_produk = cart.id_produk')->where('cart.id_user', session()->get('id_user'))->findAll()
         ]);
     }

@@ -10,9 +10,9 @@
     <link rel="shortcut icon" href="<?= base_url('template/backend/html/') ?>assets/images/favicon.ico" />
     <link rel="stylesheet" href="<?= base_url('template/backend/html/') ?>assets/css/backend-plugin.min.css">
     <link rel="stylesheet" href="<?= base_url('template/backend/html/') ?>assets/css/backend.css?v=1.0.0">
-    <link rel="stylesheet" href="<?= base_url('template/backend/html/') ?>assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
-    <link rel="stylesheet" href="<?= base_url('template/backend/html/') ?>assets/vendor/line-awesome/dist/line-awesome/css/line-awesome.min.css">
-    <link rel="stylesheet" href="<?= base_url('template/backend/html/') ?>assets/vendor/remixicon/fonts/remixicon.css">
+    <link rel="stylesheet" href="<?= base_url('template/backend/html/') ?>assets/vendors/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="<?= base_url('template/backend/html/') ?>assets/vendors/line-awesome/dist/line-awesome/css/line-awesome.min.css">
+    <link rel="stylesheet" href="<?= base_url('template/backend/html/') ?>assets/vendors/remixicon/fonts/remixicon.css">
     <!-- sweet alert -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-default@4/default.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
@@ -168,7 +168,7 @@
                         <div class="card auth-card ">
                             <div class="card-body p-0">
                                 <div class="d-flex align-items-center auth-content">
-                                    <div class="col-lg-7 align-self-center">
+                                    <div class="col-lg-12 align-self-center">
                                         <div class="p-3">
                                             <h2 class="mb-2">Log In</h2>
                                             <?php
@@ -208,9 +208,9 @@
                                             </form>
                                         </div>
                                     </div>
-                                    <div class="col-lg-5 content-right">
+                                    <!-- <div class="col-lg-5 content-right">
                                         <img src="<?= base_url('template/backend/html/') ?>assets/images/login/01.png" class="img-fluid image-right" alt="">
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>

@@ -17,9 +17,31 @@
     <link rel="stylesheet" href="<?= base_url('template/frontend/') ?>assets/css/foodsto.min.css?v=1.0.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <!-- sweet alert -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-default@4/default.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+
 </head>
 
 <body class="  ">
+    <?php if (session()->getFlashdata('pesan')) { ?>
+        <script>
+            Swal.fire(
+                'Berhasil!',
+                '<?= session()->getFlashdata('pesan') ?>',
+                'success'
+            )
+        </script>
+    <?php } ?>
+    <?php if (session()->getFlashdata('peringatan')) { ?>
+        <script>
+            Swal.fire(
+                'Maaf!',
+                '<?= session()->getFlashdata('peringatan') ?>',
+                'info'
+            )
+        </script>
+    <?php } ?>
     <span class="screen-darken"></span>
     <!-- loader Start -->
     <!-- <div id="loading">
@@ -123,7 +145,7 @@
             </div>
         </div>
 
-        <div id="back-to-top" style="">
+        <div id="back-to-top">
             <a class="top" id="top" href="#top">
                 <svg width="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M5 15.5L12 8.5L19 15.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -159,30 +181,41 @@
             },
             buttonsStyling: false
         })
-        const alertButton = document.querySelectorAll('[data-alert="sweetalert-cart"]')
-        Array.from(alertButton, (btn) => {
-            btn.addEventListener('click', () => {
-                swalWithBootstrapButtons.fire({
-                    title: 'Menambahkan Ke Keranjang!',
-                    text: "Silahkan cek keranjang anda.",
-                    icon: 'success',
-                    showCancelButton: true,
-                    confirmButtonText: 'Lanjut Membeli',
-                    cancelButtonText: 'Checkout',
-                    reverseButtons: true
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        // btn.querySelector('.btn').innerHTML = 'View Cart <i aria-hidden="true" class="fas fa-long-arrow-alt-right ms-2"></i>'
-                        return true
-                    } else if (
-                        /* Read more about handling dismissals below */
-                        result.dismiss === Swal.DismissReason.cancel
-                    ) {
-                        window.location.replace('../checkout.html')
-                    }
+        <?php if (session()->get('role')) { ?>
+            const alertButton = document.querySelectorAll('[data-alert="sweetalert-cart"]')
+            Array.from(alertButton, (btn) => {
+                btn.addEventListener('click', () => {
+                    swalWithBootstrapButtons.fire({
+                        title: 'Menambahkan Ke Keranjang!',
+                        text: "Silahkan cek keranjang anda.",
+                        icon: 'success',
+                        showCancelButton: true,
+                        confirmButtonText: 'Lanjut Membeli',
+                        cancelButtonText: 'Checkout',
+                        reverseButtons: true
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            // btn.querySelector('.btn').innerHTML = 'View Cart <i aria-hidden="true" class="fas fa-long-arrow-alt-right ms-2"></i>'
+                            return true
+                        } else if (
+                            /* Read more about handling dismissals below */
+                            result.dismiss === Swal.DismissReason.cancel
+                        ) {
+                            window.location.replace('<?= base_url('checkout') ?>')
+                        }
+                    })
                 })
             })
-        })
+        <?php } else { ?>
+
+            function addCart(id_produk) {
+                Swal.fire(
+                    'Gagal!',
+                    'Anda Harus Login Terlebih Dahulu',
+                    'info'
+                )
+            }
+        <?php } ?>
     </script>
 
     <script>
@@ -232,6 +265,7 @@
             }
         </script>
     <?php } ?>
+
 </body>
 
 </html>

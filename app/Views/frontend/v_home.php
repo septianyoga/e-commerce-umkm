@@ -3,14 +3,14 @@
 
 <div class="banner section-padding-120 pb-0" id="home-1">
     <div class="slider-image" id="banner-slider-image">
-        <div class="slider-2"></div>
+        <div class="slider-2" style="background: url(<?= base_url('asset/foto/pisang.png') ?>) no-repeat top center !important;"></div>
         <div class="slider-3"></div>
         <div class="slider-4"></div>
         <div class="slider-5"></div>
         <div class="slider-6"></div>
         <div class="slider-text">
             <div class="scrolling-text vertical-scroll text-center">
-                <div>Organic</div>
+                <div>Pisang</div>
             </div>
         </div>
     </div>
@@ -18,7 +18,7 @@
         <div class="row">
             <div class="col-md-6 align-self-center mt-mb-0 mb-4">
                 <div class="hero-left">
-                    <h2 id="banner-title">Kripik <span class="text-secondary">Pisang</span><br>
+                    <h2 id="banner-title"><span class="text-secondary">Kripik Pisang</span><br>
 
                     </h2>
                     <p id="banner-description">It Is a long established fact that a readerwill be <br>
@@ -221,7 +221,7 @@
                                 <div class="card card-product">
                                     <div class="card-body">
                                         <div class="iq-product-image">
-                                            <img src="<?= base_url('foto_produk/' . $row['foto_produk']) ?>" class="hover_image" alt="img" style="min-height: 220px;">
+                                            <img src="<?= base_url('foto_produk/' . $row['foto_produk']) ?>" class="hover_image" alt="img" style="min-height: 220px; aspect-ratio: 4/3; object-fit: contain; ">
                                         </div>
                                         <div class="iq-product-content mt-3">
                                             <!-- <p class="mb-0"><small>Breakfast Cereals, Snacks</small></p> -->
@@ -1483,23 +1483,24 @@
     </div>
 </section>
 
-<script>
-    function addCart(id_produk) {
-        $.ajax({
-            url: '<?= base_url('cart/add') ?>',
-            type: 'POST',
-            data: {
-                'id_produk': id_produk
-            },
-            success: function(response) {
-                console.log(response)
-                getCountCart()
-                getAllCart()
-            }
-        })
-    }
-</script>
-
+<?php if (session()->get('role')) { ?>
+    <script>
+        function addCart(id_produk) {
+            $.ajax({
+                url: '<?= base_url('cart/add') ?>',
+                type: 'POST',
+                data: {
+                    'id_produk': id_produk
+                },
+                success: function(response) {
+                    console.log(response)
+                    getCountCart()
+                    getAllCart()
+                }
+            })
+        }
+    </script>
+<?php } ?>
 
 <!-- Wrapper End-->
 <?= $this->endSection() ?>

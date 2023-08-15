@@ -19,7 +19,7 @@ class Produk extends BaseController
     {
         return view('backend/produk/v_produk', [
             'title' => 'Produk',
-            'data'  => $this->ModelProduk->findAll()
+            'data'  => $this->ModelProduk->where('stok_produk !=', null)->findAll()
         ]);
     }
 
@@ -54,13 +54,6 @@ class Produk extends BaseController
                     'uploaded' => '{field} wajib diisi.',
                     'max_size' => '{field} Maksimal Ukurannya 1 MB',
                     'mime_in' => 'Format {field} Wajib PNG/JPG/JPEG',
-                ],
-            ],
-            'stok_produk' => [
-                'label' => 'Stok Produk',
-                'rules' => 'required',
-                'errors' => [
-                    'required' => '{field} Wajib Diisi.',
                 ],
             ],
             'berat' => [
@@ -99,6 +92,9 @@ class Produk extends BaseController
         ];
         $this->ModelProduk->insert($data);
         $foto_produk->move('foto_produk', $nama_foto);
+        if (!$this->request->getPost('stok_produk')) {
+            return redirect()->to(base_url('paketreseller'))->with('pesan', 'Berhasil Menambahkan Paket Produk Reseller!.');
+        }
         return redirect()->to(base_url('produk'))->with('pesan', 'Berhasil Menambahkan Produk!.');
     }
 

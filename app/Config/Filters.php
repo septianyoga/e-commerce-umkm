@@ -36,6 +36,7 @@ class Filters extends BaseConfig
                     '/',
                     '/auth',
                     '/auth/*',
+                    '/payment/pay',
                 ]
             ],
         ],
@@ -45,6 +46,12 @@ class Filters extends BaseConfig
                     '/admin',
                     '/produk',
                     '/produk/*',
+                    '/paketreseller',
+                    '/paketreseller/*',
+                    '/pesanan',
+                    '/pesanan/*',
+                    '/laporan',
+                    '/laporan/*',
                 ]
             ],
             'filteruser' => [
@@ -57,6 +64,16 @@ class Filters extends BaseConfig
                     '/cart/*',
                     '/checkout',
                     '/checkout/*',
+                    '/payment',
+                    '/payment/*',
+                    '/cekongkir',
+                    '/cekongkir/*',
+                    '/order',
+                    '/order/*',
+                    '/order',
+                    '/order/*',
+                    '/auth/edit_alamat',
+                    '/auth/getKota',
                 ]
             ],
         ],

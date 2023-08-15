@@ -41,6 +41,10 @@ $routes->post('auth/login', 'Auth::login');
 $routes->get('auth/logout', 'Auth::logout');
 $routes->get('auth/regist', 'Auth::regist');
 $routes->post('auth/daftar', 'Auth::daftar');
+$routes->get('auth/getProv', 'Auth::getProvinsi');
+$routes->get('auth/getKota', 'Auth::getKota');
+$routes->get('auth/edit_alamat', 'Auth::editAlamat');
+$routes->post('auth/edit_alamat', 'Auth::prosesEdit');
 
 // page produk
 $routes->get('produk', 'Produk::index');
@@ -60,6 +64,34 @@ $routes->get('cart/(:num)/del', 'Cart::delete/$1');
 
 // page checkout
 $routes->get('checkout', 'Checkout::index');
+
+// page payment
+$routes->post('payment', 'Payment::index');
+$routes->post('payment/pending', 'Payment::pending');
+$routes->post('payment/pay', 'Payment::pay');
+$routes->get('payment/redirect', 'Payment::direct');
+
+// page cek ongkir
+$routes->get('cekongkir', 'CekOngkir::index');
+$routes->post('cekongkir/getCost', 'CekOngkir::getCost');
+$routes->get('cekongkir/(:num)', 'CekOngkir::getKota/$1');
+
+// page order
+$routes->post('order', 'Order::insertOrder');
+$routes->get('order', 'Order::index');
+$routes->get('order/(:segment)/detail', 'Order::detail/$1');
+$routes->get('order/tes', 'Order::autoUbahStatus');
+
+// page paket reseller
+$routes->get('paketreseller', 'PaketReseller::index');
+
+// page pesanan
+$routes->get('pesanan', 'Pesanan::index');
+$routes->get('pesanan/(:segment)/approv', 'Pesanan::approv/$1');
+$routes->post('pesanan/(:segment)/updateResi', 'Pesanan::updateResi/$1');
+
+// page laporan
+$routes->get('laporan', 'Laporan::index');
 
 /*
  * --------------------------------------------------------------------

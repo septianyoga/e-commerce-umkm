@@ -18,24 +18,14 @@
                         <div id="iq-menu-container" class="menu-main-menu-container">
                             <ul id="top-menu" class="navbar-nav">
                                 <li class="active ">
-                                    <a href="javascript:void(0)" aria-current="page" class="menu-item">Home
-                                        <i class="fas fa-chevron-down"></i></a>
-                                    <ul class="sub-menu">
-                                        <li class="current-menu-item"><a href="<?= base_url('template/frontend/') ?>index.html" aria-current="page">Main Home</a></li>
-                                        <li class=""><a href="<?= base_url('template/frontend/') ?>home-2.html">Home 2</a></li>
-                                        <li class=""><a href="<?= base_url('template/frontend/') ?>home-3.html">Home 3</a></li>
-                                    </ul>
+                                    <a href="<?= base_url('/') ?>">Home
+                                    </a>
                                 </li>
-                                <li class="">
-                                    <a href="javascript:void(0)" class="menu-item">Pages
-                                        <i class="fas fa-chevron-down  toggledrop"></i></a>
-                                    <ul class="sub-menu">
-                                        <li class=""><a href="<?= base_url('template/frontend/') ?>about-us.html">About Us</a></li>
-                                        <li class=""><a href="<?= base_url('template/frontend/') ?>our-team.html">Our Team</a></li>
-                                        <li class=""><a href="<?= base_url('template/frontend/') ?>contact-us.html">Contact Us</a></li>
-                                    </ul>
+                                <li class=" ">
+                                    <a href="<?= base_url('order') ?>">Pesanan
+                                    </a>
                                 </li>
-                                <li class="">
+                                <!-- <li class="">
                                     <a href="javascript:void(0)" class="menu-item">Shop <i class="fas fa-chevron-down  toggledrop"></i></a>
                                     <ul class="sub-menu">
                                         <li class=""><a href="<?= base_url('template/frontend/') ?>category-list.html">category list</a></li>
@@ -80,20 +70,7 @@
                                         <li class=""><a href="<?= base_url('template/frontend/') ?>blog/left-sidebar-blog.html">Left Sidebar Blog</a></li>
                                         <li class=""><a href="<?= base_url('template/frontend/') ?>blog/right-sidebar-blog.html">Right sidebar Blog</a></li>
                                     </ul>
-                                </li>
-                                <li class="">
-                                    <?php if (session()->get('role')) { ?>
-                                        <a href="<?= base_url('auth/logout ') ?>">
-                                            Logout
-                                            <i class="bi bi-box-arrow-right ms-1"></i>
-                                        </a>
-                                    <?php } else { ?>
-                                        <a href="<?= base_url('auth ') ?>">
-                                            Login
-                                            <i class="bi bi-box-arrow-in-right"></i>
-                                        </a>
-                                    <?php } ?>
-                                </li>
+                                </li> -->
                             </ul>
                         </div>
                     </div>
@@ -106,48 +83,52 @@
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-mini-cart">
                                     <div class="widget_shopping_cart_content ">
-                                        <div>
-                                            <div class="d-flex flex-column justify-content-center shopping_cart_content" style="min-height: 100px; height:auto;">
-                                                <div class="pasteCart">
-                                                    <?php if ($cart != null) { ?>
-                                                    <?php } ?>
+                                        <?php if (session()->get('role')) { ?>
+                                            <div>
+                                                <div class="d-flex flex-column justify-content-center shopping_cart_content" style="min-height: 100px; height:auto;">
+                                                    <div class="pasteCart">
+                                                        <?php if ($cart != null) { ?>
+                                                        <?php } ?>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex justify-content-between pt-3 border-top mt-3">
+                                                    <!-- <p><strong>Subtotal:</strong></p> -->
+                                                    <?php
+                                                    //  if ($cart != null) {
+                                                    //     $subtotal = 0;
+                                                    //     foreach ($cart as $row) {
+                                                    //         $subtotal = $subtotal + ($row['qty'] * $row['harga_produk']);
+                                                    //     }
+                                                    //     echo $subtotal;
+                                                    // } 
+                                                    ?>
+                                                </div>
+                                                <div class="d-flex justify-content-center">
+                                                    <!-- <div class="iq-button-viewcart">
+                                                        <a href="<?= base_url('cart') ?>" class="text-white">
+                                                            <div class="d-flex align-items-center">
+                                                                <span class="me-1 iq-button-effact">
+                                                                    VIEW CART
+                                                                </span>
+                                                                <i aria-hidden="true" class="fas fa-long-arrow-alt-right"></i>
+                                                            </div>
+                                                        </a>
+                                                    </div> -->
+                                                    <div class=" iq-button-viewcart iq-button-checkout w-100 text-center">
+                                                        <a href="<?= base_url('checkout') ?>" class="text-white">
+                                                            <div class="d-flex justify-content-center align-items-center">
+                                                                <span class="me-1 iq-button-effact">
+                                                                    CHECKOUT
+                                                                </span>
+                                                                <i aria-hidden="true" class="fas fa-long-arrow-alt-right"></i>
+                                                            </div>
+                                                        </a>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="d-flex justify-content-between pt-3 border-top mt-3">
-                                                <!-- <p><strong>Subtotal:</strong></p> -->
-                                                <?php
-                                                //  if ($cart != null) {
-                                                //     $subtotal = 0;
-                                                //     foreach ($cart as $row) {
-                                                //         $subtotal = $subtotal + ($row['qty'] * $row['harga_produk']);
-                                                //     }
-                                                //     echo $subtotal;
-                                                // } 
-                                                ?>
-                                            </div>
-                                            <div class="d-flex justify-content-between">
-                                                <div class="iq-button-viewcart">
-                                                    <a href="<?= base_url('cart') ?>" class="text-white">
-                                                        <div class="d-flex align-items-center">
-                                                            <span class="me-1 iq-button-effact">
-                                                                VIEW CART
-                                                            </span>
-                                                            <i aria-hidden="true" class="fas fa-long-arrow-alt-right"></i>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <div class=" iq-button-viewcart iq-button-checkout">
-                                                    <a href="<?= base_url('checkout') ?>" class="text-white">
-                                                        <div class="d-flex  align-items-center">
-                                                            <span class="me-1 iq-button-effact">
-                                                                CHECKOUT
-                                                            </span>
-                                                            <i aria-hidden="true" class="fas fa-long-arrow-alt-right"></i>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <?php } else { ?>
+                                            <h6 class="text-center">Anda Harus Login Terlebih Dahulu.</h6>
+                                        <?php } ?>
                                     </div>
                                 </div>
                             </li>
@@ -160,6 +141,32 @@
                                 </div>
                             </li>
                         </ul>
+                    </div>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <div id="iq-menu-container" class="menu-main-menu-container">
+                            <ul id="top-menu" class="navbar-nav">
+                                <?php if (session()->get('role')) { ?>
+                                    <li class="iq-cart">
+                                        <a href="javascript:void(0)" class="dropdown-back " data-bs-toggle="dropdown">
+                                            <span><?= session()->get('nama_user') ?></span>
+                                            <small style="font-size: 0.7rem;">(<?= session()->get('role') ?>)</small>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-mini-cart" style="margin-left: -10px !important;">
+                                            <div class="widget_shopping_cart_content">
+                                                <a href="<?= base_url('auth/logout') ?>" class="text-center d-flex justify-content-center align-items-center">Logout <i class="bi bi-box-arrow-right ms-1 fs-6"></i></a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                <?php } else { ?>
+                                    <li class="">
+                                        <a href="<?= base_url('auth ') ?>">
+                                            Login
+                                            <i class="bi bi-box-arrow-in-right"></i>
+                                        </a>
+                                    </li>
+                                <?php } ?>
+                            </ul>
+                        </div>
                     </div>
                 </nav>
             </div>

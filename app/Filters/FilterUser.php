@@ -45,7 +45,7 @@ class FilterUser implements FilterInterface
      */
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
     {
-        if (session()->get('role') == 'User') {
+        if (session()->get('role') == 'User' || session()->get('role') == 'Reseller') {
             return redirect()->to(base_url('/'));
         }
     }
