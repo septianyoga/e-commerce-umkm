@@ -13,7 +13,7 @@ class ModelOrders extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['id_order', 'id_user', 'total_pembayaran', 'kurir', 'ongkir', 'resi', 'metode_pembayaran', 'bank', 'va_number', 'batas_transaksi', 'id_transaksi', 'status_pesanan'];
+    protected $allowedFields    = ['id_order', 'id_user', 'total_pembayaran', 'kurir', 'ongkir', 'resi', 'tanggal_dikirim', 'metode_pembayaran', 'bank', 'va_number', 'batas_transaksi', 'batas_waktu_pesan', 'id_transaksi', 'status_pesanan'];
 
     // Dates
     protected $useTimestamps = false;

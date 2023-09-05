@@ -37,6 +37,8 @@ class Filters extends BaseConfig
                     '/auth',
                     '/auth/*',
                     '/payment/pay',
+                    '/product/*',
+                    '/about',
                 ]
             ],
         ],
@@ -74,6 +76,7 @@ class Filters extends BaseConfig
                     '/order/*',
                     '/auth/edit_alamat',
                     '/auth/getKota',
+                    '/about',
                 ]
             ],
         ],

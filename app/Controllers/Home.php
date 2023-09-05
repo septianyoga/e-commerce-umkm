@@ -33,4 +33,12 @@ class Home extends BaseController
             'cart'  => session()->get('id_user') == null ? null : $this->ModelCart->join('produk', 'produk.id_produk = cart.id_produk')->where('cart.id_user', session()->get('id_user'))->findAll()
         ]);
     }
+
+    public function about()
+    {
+        return view('frontend/about/v_about', [
+            'title' => 'About',
+            'cart'  => session()->get('id_user') == null ? null : $this->ModelCart->join('produk', 'produk.id_produk = cart.id_produk')->where('cart.id_user', session()->get('id_user'))->findAll()
+        ]);
+    }
 }

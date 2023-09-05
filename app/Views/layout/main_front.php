@@ -14,7 +14,7 @@
     <!-- fontawsome Css Build -->
     <link rel="stylesheet" href="<?= base_url('template/frontend/') ?>assets/vendors/@fortawesome/fontawesome-free/css/all.min.css">
     <!-- Custom Css -->
-    <link rel="stylesheet" href="<?= base_url('template/frontend/') ?>assets/css/foodsto.min.css?v=1.0.0">
+    <link rel="stylesheet" href="<?= base_url('template/frontend/') ?>assets/css/foodsts.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <!-- sweet alert -->
@@ -68,13 +68,15 @@
                         <div class="col-lg-3 col-md-6 col-sm-6 ">
                             <div class="footer-logo">
                                 <a href="javascript:void(0)">
-                                    <img class="img-fluid" src="<?= base_url('template/frontend/') ?>assets/images/logo.png" alt="foodsto1">
+                                    <h4 class="my-0 text-primary">UMKM</h4>
+                                    <h6 class="my-0 text-secondary">Rasa Alami</h6>
+                                    <!-- <img class="img-fluid" src="<?= base_url('template/frontend/') ?>assets/images/logo.png" alt="foodsto1"> -->
                                 </a>
                             </div>
                             <div class="widget mb-4">
                                 <div class="textwidget text-body">
-                                    <p>Subscribe to our newsletter and get 10% off your<br>
-                                        first purchase.
+                                    <p>Diskon untuk pelanggan yang sering membeli.<br>
+                                        Syarat & Ketentuan Berlaku.
                                     </p>
                                 </div>
                             </div>
@@ -90,9 +92,9 @@
                                 <h5 class="footer-title">Link</h5>
                                 <div class="menu-footer1-container">
                                     <ul id="menu-footer1" class="menu list-inline p-0 m-0">
-                                        <li class="menu-item"><a href="<?= base_url('template/frontend/') ?>checkout.html"><i class="fas fa-chevron-right me-2"></i>Checkout</a></li>
-                                        <li class="menu-item"><a href="<?= base_url('template/frontend/') ?>wishlist.html"><i class="fas fa-chevron-right me-2"></i>Wishlist</a></li>
-                                        <li class="menu-item"><a href="<?= base_url('template/frontend/') ?>cart.html"><i class="fas fa-chevron-right me-2"></i>Shopping Cart</a></li>
+                                        <li class="menu-item"><a href="<?= base_url('/') ?>"><i class="fas fa-chevron-right me-2"></i>Home</a></li>
+                                        <li class="menu-item"><a href="<?= base_url('checkout') ?>"><i class="fas fa-chevron-right me-2"></i>Checkout</a></li>
+                                        <li class="menu-item"><a href="<?= base_url('order') ?>"><i class="fas fa-chevron-right me-2"></i>Pesanan</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -102,10 +104,10 @@
                                 <h5 class="footer-title">Information</h5>
                                 <div class="menu-footer2-container">
                                     <ul id="menu-footer2" class="menu list-inline p-0 m-0">
-                                        <li class="menu-item"><a href="<?= base_url('template/frontend/') ?>about-us.html"><i class="fas fa-chevron-right me-2"></i>About Us</a></li>
-                                        <li class="menu-item"><a href="<?= base_url('template/frontend/') ?>our-team.html"><i class="fas fa-chevron-right me-2"></i>Our Team</a></li>
+                                        <li class="menu-item"><a href="<?= base_url('about') ?>"><i class="fas fa-chevron-right me-2"></i>About Us</a></li>
+                                        <!-- <li class="menu-item"><a href="<?= base_url('template/frontend/') ?>our-team.html"><i class="fas fa-chevron-right me-2"></i>Our Team</a></li>
                                         <li class="menu-item"><a href="<?= base_url('template/frontend/') ?>contact-us.html"><i class="fas fa-chevron-right me-2"></i>Contact Us</a></li>
-                                        <li class="menu-item"><a href="<?= base_url('template/frontend/') ?>blog/left-sidebar-blog.html"><i class="fas fa-chevron-right me-2"></i>Blog</a></li>
+                                        <li class="menu-item"><a href="<?= base_url('template/frontend/') ?>blog/left-sidebar-blog.html"><i class="fas fa-chevron-right me-2"></i>Blog</a></li> -->
                                     </ul>
                                 </div>
                             </div>
@@ -117,13 +119,13 @@
                                     <div class="col-sm-12">
                                         <ul class="iq-contact list-inline p-0 m-0">
                                             <li>
-                                                <a href="javascript:void(0)"><i class="fa fa-home"></i><span>1234 North Avenue Luke Lane, South Bend, IN 360001</span></a>
+                                                <a href="javascript:void(0)"><i class="fa fa-home"></i><span>Kp. Cijengkol RT 03 RW 02 Desa Cijengkol, Kec. Serangpanjang, Kab. Subang</span></a>
                                             </li>
                                             <li>
-                                                <a href="mailto:jondoe@demo.com"><i class="fa fa-envelope"></i><span>jondoe@demo.com</span></a>
+                                                <a href=""><i class="fa fa-envelope"></i><span>rasaalami@gmail.com</span></a>
                                             </li>
                                             <li>
-                                                <a href="tel:+0123456789"><i class="fa fa-phone"></i><span>+0123456789</span></a>
+                                                <a href=""><i class="fa fa-phone"></i><span>62888888888888</span></a>
                                             </li>
                                         </ul>
                                     </div>
@@ -138,18 +140,16 @@
         <div class="copyright-footer bg-soft-primary">
             <div class="container">
                 <div class="pt-3 pb-3">
-                    <div class="d-flex justify-content-between">
-                        <span class="copyright">Copyright 2021 foodsto All Rights Reserved.</span>
+                    <div class="d-flex justify-content-center">
+                        <span class="copyright">Copyright 2023 UMKM Rasa Alami All Rights Reserved.</span>
                     </div>
                 </div>
             </div>
         </div>
 
         <div id="back-to-top">
-            <a class="top" id="top" href="#top">
-                <svg width="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M5 15.5L12 8.5L19 15.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                </svg>
+            <a class="top" target="_blank" href="https://api.whatsapp.com/send?phone=6295330930059&text=Halo%20kak%2C%20Aku%20mau%20pesen%20kripik%20pisangnya%20dong...">
+                <i class="bi bi-whatsapp"></i>
             </a>
         </div>
     </main>

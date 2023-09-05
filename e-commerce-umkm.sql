@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 15, 2023 at 03:55 AM
+-- Generation Time: Sep 05, 2023 at 03:29 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -41,45 +41,26 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`id_cart`, `id_produk`, `qty`, `id_user`, `id_order`, `status_cart`) VALUES
-(4, 6, 2, 5, '20230809-1051203686', 'Checkout'),
-(5, 2, 2, 7, '20230809-1028265371', 'Checkout'),
-(6, 3, 1, 7, '20230809-1028265371', 'Checkout'),
-(7, 5, 1, 5, '20230809-1051203686', 'Checkout'),
-(8, 6, 1, 7, '20230809-1139131663', 'Checkout'),
-(9, 5, 4, 7, '20230809-1139131663', 'Checkout'),
-(10, 3, 2, 5, '20230809-495626288', 'Checkout'),
-(11, 2, 2, 5, '20230809-495626288', 'Checkout'),
-(12, 3, 1, 7, '20230809-1139131663', 'Checkout'),
-(13, 5, 1, 5, '20230809-495626288', 'Checkout'),
-(14, 6, 1, 5, '20230809-495626288', 'Checkout'),
-(15, 2, 1, 7, '20230809-1680571396', 'Checkout'),
-(16, 3, 1, 7, '20230809-1680571396', 'Checkout'),
-(17, 5, 1, 5, '20230809-1235409167', 'Checkout'),
-(18, 2, 1, 5, '20230809-1235409167', 'Checkout'),
-(19, 2, 1, 7, '20230809-661323430', 'Checkout'),
-(20, 5, 1, 7, '20230809-661323430', 'Checkout'),
-(21, 2, 1, 7, '20230813-328413012', 'Checkout'),
-(22, 3, 2, 7, '20230813-328413012', 'Checkout'),
-(23, 6, 2, 7, '20230813-1317622129', 'Checkout'),
-(24, 3, 3, 7, '20230813-34640303', 'Checkout'),
-(25, 2, 1, 7, '20230813-1781591137', 'Checkout'),
-(26, 3, 1, 7, '20230813-1781591137', 'Checkout'),
-(27, 3, 1, 7, '20230813-2094989884', 'Checkout'),
-(28, 6, 1, 7, '20230813-2094989884', 'Checkout'),
-(29, 2, 3, 7, '20230813-1805086620', 'Checkout'),
-(30, 3, 1, 7, '20230813-1805086620', 'Checkout'),
-(31, 3, 3, 7, '20230813-708646998', 'Checkout'),
-(34, 2, 1, 7, '20230813-834840644', 'Checkout'),
-(35, 2, 2, 7, '20230813-556551588', 'Checkout'),
-(36, 2, 2, 7, '20230813-22542977', 'Checkout'),
-(37, 3, 1, 7, '20230813-1573359710', 'Checkout'),
-(38, 5, 1, 7, '20230813-1573359710', 'Checkout'),
-(39, 2, 2, 7, '20230813-1585996172', 'Checkout'),
-(40, 3, 1, 7, '20230813-236268444', 'Checkout'),
-(41, 5, 1, 7, '20230813-236268444', 'Checkout'),
-(45, 3, 1, 7, '20230814-397506936', 'Checkout'),
-(46, 5, 1, 7, '20230814-397506936', 'Checkout'),
-(47, 2, 2, 7, '20230814-1755951160', 'Checkout');
+(1, 7, 1, 8, '20230815-71498633', 'Checkout'),
+(2, 7, 1, 8, '20230815-739895375', 'Checkout'),
+(3, 7, 1, 8, '20230815-1486192686', 'Checkout'),
+(7, 3, 2, 7, '20230815-1947601027', 'Checkout'),
+(9, 5, 2, 7, '20230815-1947601027', 'Checkout'),
+(10, 2, 1, 7, '20230815-2111820128', 'Checkout'),
+(11, 3, 1, 7, '20230815-2111820128', 'Checkout'),
+(16, 2, 1, 7, '20230815-1516001967', 'Checkout'),
+(17, 3, 1, 7, '20230815-1516001967', 'Checkout'),
+(18, 2, 2, 7, '20230815-1044739056', 'Checkout'),
+(19, 6, 2, 7, '20230815-4562121', 'Checkout'),
+(20, 2, 1, 7, '20230816-1949800765', 'Checkout'),
+(21, 3, 1, 7, '20230816-1949800765', 'Checkout'),
+(22, 5, 2, 7, '20230816-1949800765', 'Checkout'),
+(23, 2, 1, 7, '20230824-263311440', 'Checkout'),
+(24, 3, 1, 7, '20230824-263311440', 'Checkout'),
+(25, 2, 1, 7, '20230905-1997017982', 'Checkout'),
+(26, 3, 1, 7, '20230905-1997017982', 'Checkout'),
+(27, 3, 1, 7, '20230905-503413747', 'Checkout'),
+(28, 5, 1, 7, '20230905-503413747', 'Checkout');
 
 -- --------------------------------------------------------
 
@@ -95,10 +76,12 @@ CREATE TABLE `orders` (
   `kurir` varchar(30) NOT NULL,
   `ongkir` int(11) NOT NULL,
   `resi` varchar(255) DEFAULT NULL,
+  `tanggal_dikirim` date DEFAULT NULL,
   `metode_pembayaran` varchar(255) DEFAULT NULL,
   `bank` varchar(255) DEFAULT NULL,
   `va_number` varchar(255) DEFAULT NULL,
   `batas_transaksi` datetime DEFAULT NULL,
+  `batas_waktu_pesan` datetime DEFAULT NULL,
   `id_transaksi` varchar(255) DEFAULT NULL,
   `status_pesanan` enum('Menunggu Pembayaran','Dibatalkan','Pending','Expired','Selesai','Dikemas','Dikirim','Diterima') DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
@@ -107,30 +90,19 @@ CREATE TABLE `orders` (
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`id_order`, `id_user`, `tanggal`, `total_pembayaran`, `kurir`, `ongkir`, `resi`, `metode_pembayaran`, `bank`, `va_number`, `batas_transaksi`, `id_transaksi`, `status_pesanan`) VALUES
-('20230809-1028265371', 7, '2023-08-09 14:37:12', 40000, 'OKE', 15000, NULL, NULL, NULL, NULL, NULL, NULL, 'Menunggu Pembayaran'),
-('20230809-1051203686', 5, '2023-08-09 14:40:40', 40000, 'OKE', 12000, NULL, 'qris', NULL, NULL, '2023-08-09 21:45:16', 'b8a8ed18-f1ac-4a44-801a-fd71686eec97', 'Selesai'),
-('20230809-1139131663', 7, '2023-08-09 14:57:08', 76000, 'OKE', 15000, NULL, NULL, NULL, NULL, NULL, NULL, 'Menunggu Pembayaran'),
-('20230809-1235409167', 5, '2023-08-09 15:49:30', 34000, 'OKE', 12000, NULL, 'qris', NULL, NULL, '2023-08-09 22:43:46', '96353ca5-25d6-4759-a08a-387b11db848f', 'Expired'),
-('20230809-1680571396', 7, '2023-08-09 15:06:11', 30000, 'OKE', 15000, NULL, 'gopay', NULL, NULL, '2023-08-09 22:16:38', '032e9afb-a6a4-43c7-93d6-9dc082c3fe44', 'Selesai'),
-('20230809-495626288', 5, '2023-08-09 15:22:21', 62000, 'OKE', 12000, NULL, 'qris', NULL, NULL, '2023-08-09 22:14:04', '7ea51e9b-9a7d-4d43-bb9a-75e95386db7f', 'Expired'),
-('20230809-661323430', 7, '2023-08-09 15:51:29', 37000, 'OKE', 15000, NULL, 'bank_transfer', 'bca', '38972035296', '2023-08-10 22:49:47', '30e0a89e-3fad-4a1b-85e4-cfa7f0783211', 'Selesai'),
-('20230813-1317622129', 7, '2023-08-13 07:18:17', 28000, 'OKE', 12000, NULL, 'gopay', NULL, NULL, '2023-08-13 14:32:18', '10a571ff-2c5b-4d1d-b28b-7b149288eae7', 'Selesai'),
-('20230813-1573359710', 7, '2023-08-13 08:12:47', 29000, 'OKE', 12000, NULL, 'alfamart', NULL, NULL, '2023-08-14 15:12:22', 'c4daf88a-0634-4dc2-a732-1efcdcc4e4c0', 'Selesai'),
-('20230813-1585996172', 7, '2023-08-13 08:13:57', 32000, 'OKE', 12000, NULL, 'bri_epay', NULL, NULL, '2023-08-13 17:13:47', 'fb8deb97-20f6-4263-8838-4c65768bdd13', 'Selesai'),
-('20230813-1781591137', 7, '2023-08-13 07:24:11', 27000, 'OKE', 12000, NULL, 'bank_transfer', 'bri', '389729078256722121', '2023-08-14 14:23:43', 'ea3c9abd-921e-4eb7-922c-5a41f1111ed6', 'Selesai'),
-('20230813-1805086620', 7, '2023-08-13 07:25:44', 47000, 'OKE', 12000, NULL, 'shopeepay', NULL, NULL, '2023-08-13 14:30:35', '2941f7b4-92b1-47ce-91a1-58ebb7a275d7', 'Selesai'),
-('20230813-2094989884', 7, '2023-08-13 07:24:54', 25000, 'OKE', 12000, NULL, 'gopay', NULL, NULL, '2023-08-13 14:39:43', '3da7b0c6-581a-4cf1-8e8f-b0415de395e5', 'Selesai'),
-('20230813-2117104757', 7, '2023-08-13 07:40:05', 22000, 'OKE', 12000, NULL, NULL, NULL, NULL, NULL, NULL, 'Menunggu Pembayaran'),
-('20230813-22542977', 7, '2023-08-13 08:11:01', 22000, 'OKE', 12000, NULL, 'shopeepay', NULL, NULL, '2023-08-13 15:15:53', '5839c9d5-098d-4596-8549-361284ff0db6', 'Selesai'),
-('20230813-236268444', 7, '2023-08-14 12:17:38', 29000, 'OKE', 12000, NULL, 'alfamart', NULL, NULL, '2023-08-14 15:19:49', '8b2c4d09-8a7d-4b95-8039-5de8d33cbeff', 'Dikemas'),
-('20230813-328413012', 7, '2023-08-13 07:15:55', 32000, 'OKE', 12000, NULL, 'bank_transfer', 'bca', '38972730647', '2023-08-14 14:12:06', 'f494995f-f5fb-4e2f-ad0b-ed7be1a6e5eb', 'Selesai'),
-('20230813-34640303', 7, '2023-08-13 07:22:37', 27000, 'OKE', 12000, NULL, 'shopeepay', NULL, NULL, '2023-08-13 14:24:08', 'bb8349d9-befe-40c6-a50e-dc755f60ecdf', 'Selesai'),
-('20230813-556551588', 7, '2023-08-13 08:07:22', 32000, 'OKE', 12000, NULL, 'cstore', NULL, NULL, '2023-08-14 15:05:06', '4c0eec00-c8f5-45ac-9b59-1f9d1163bac1', 'Selesai'),
-('20230813-708646998', 7, '2023-08-13 07:30:14', 27000, 'OKE', 12000, '112223333444444', 'cstore', NULL, NULL, '2023-08-14 14:27:59', '3a697c8f-54ee-4736-8374-321680bfcadc', 'Dikirim'),
-('20230813-834840644', 7, '2023-08-14 13:10:26', 22000, 'OKE', 12000, NULL, 'bri_epay', NULL, NULL, '2023-08-13 16:40:31', 'd0c5bb49-f854-47b9-a088-1afa457aa1a6', 'Dikemas'),
-('20230814-1755951160', 7, '2023-08-14 13:01:29', 32000, 'OKE', 12000, '11223344', 'bank_transfer', 'bca', '38972946351', '2023-08-15 11:08:17', '365fcf4d-521e-454f-8cf0-e297a170547a', 'Dikirim'),
-('20230814-397506936', 7, '2023-08-14 04:18:02', 29000, 'OKE', 12000, NULL, 'qris', NULL, NULL, '2023-08-14 11:17:57', '785e8268-a30b-4694-ba29-f204d09069d5', 'Expired');
+INSERT INTO `orders` (`id_order`, `id_user`, `tanggal`, `total_pembayaran`, `kurir`, `ongkir`, `resi`, `tanggal_dikirim`, `metode_pembayaran`, `bank`, `va_number`, `batas_transaksi`, `batas_waktu_pesan`, `id_transaksi`, `status_pesanan`) VALUES
+('20230815-1044739056', 7, '2023-08-15 15:27:52', 32000, 'OKE', 12000, NULL, NULL, 'bank_transfer', 'bca', '38972689811', '2023-08-16 22:31:13', '2023-08-16 22:27:52', '4dedd919-c314-4933-978c-b2f3ab020a77', 'Selesai'),
+('20230815-1486192686', 8, '2023-08-15 07:17:30', 174000, 'OKE', 24000, NULL, NULL, 'bri_epay', NULL, NULL, '2023-08-15 16:17:43', NULL, '9b1674ad-0bc7-4075-893a-b4b8daac155f', 'Selesai'),
+('20230815-1516001967', 7, '2023-08-15 15:17:03', 27000, 'OKE', 12000, NULL, NULL, 'qris', NULL, NULL, '2023-08-15 22:23:39', '2023-08-16 22:17:03', 'a549006f-982e-4cb4-8a8e-e62f301c57bc', 'Expired'),
+('20230815-1947601027', 7, '2023-08-15 13:57:49', 46000, 'OKE', 12000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Expired'),
+('20230815-2111820128', 7, '2023-08-15 14:10:32', 27000, 'OKE', 12000, NULL, NULL, NULL, NULL, NULL, NULL, '2023-08-15 21:45:32', NULL, 'Expired'),
+('20230815-4562121', 7, '2023-08-15 15:32:14', 28000, 'OKE', 12000, NULL, NULL, 'bank_transfer', 'bri', '389721141962046410', '2023-08-15 22:33:27', '2023-08-16 22:32:14', '2e898d8f-f28b-4ae5-9f9a-eb6e7c82379c', 'Expired'),
+('20230815-71498633', 8, '2023-08-15 06:34:07', 174000, 'OKE', 24000, NULL, NULL, 'bank_transfer', 'bca', '38972973951', '2023-08-16 13:34:17', NULL, 'c3c8afe2-43ca-4cea-b85a-7772acc0e67e', 'Dikemas'),
+('20230815-739895375', 8, '2023-08-15 07:15:27', 174000, 'OKE', 24000, NULL, NULL, 'gopay', NULL, NULL, '2023-08-15 14:31:03', NULL, '68237999-daba-4136-b6ee-49f7b129123d', 'Selesai'),
+('20230816-1949800765', 7, '2023-08-16 05:56:14', 54000, 'OKE', 15000, '123123123', NULL, 'bank_transfer', 'bca', '38972333829', '2023-08-17 12:57:37', '2023-08-17 12:56:14', 'a900ce06-4e9d-4d54-bdce-691a060a9227', 'Expired'),
+('20230824-263311440', 7, '2023-08-24 02:26:19', 30000, 'OKE', 15000, '121212121212112', '2023-08-03', 'bank_transfer', 'bca', '38972815096', '2023-08-25 09:26:56', '2023-08-25 09:26:19', 'bda8d3e0-4ece-468e-ae77-f8a8af4c0e31', 'Expired'),
+('20230905-1997017982', 7, '2023-09-04 22:56:21', 30000, 'OKE', 15000, '123321456654', '2023-09-04', 'bank_transfer', 'bca', '38972978119', '2023-09-06 05:58:19', '2023-09-06 05:56:21', '3ec48e34-2913-4506-b90d-6bc907d2bc51', 'Dikirim'),
+('20230905-503413747', 7, '2023-09-04 23:01:47', 32000, 'OKE', 15000, NULL, NULL, 'bank_transfer', 'bca', '38972993324', '2023-09-06 06:02:02', '2023-09-06 06:01:47', '84913019-7ab0-4b44-9813-a5933f8f9fa4', 'Selesai');
 
 -- --------------------------------------------------------
 
@@ -154,9 +126,9 @@ CREATE TABLE `produk` (
 --
 
 INSERT INTO `produk` (`id_produk`, `nama_produk`, `harga_produk`, `berat`, `foto_produk`, `deskripsi_produk`, `stok_produk`, `status_produk`) VALUES
-(2, 'Kripik Pisang Sale', 10000, 200, '1690349384_5945d8743f34e61a7166.jpeg', 'Kripik Pisang Rasa Asli', 20, 'Non Aktif'),
-(3, 'Kripik Pisang Goreng Kriuk', 5000, 150, '1690348405_a87f99c53a109b38ab87.jpg', 'Kripik Pisang Krispi', 10, 'Aktif'),
-(5, 'Kripik Pisang Goreng', 12000, 200, '1690947391_8c756dcac0a16b97d0ba.webp', 'Kripik Pisang yang renyah dan krispi', 20, 'Aktif'),
+(2, 'Kripik Pisang Sale', 10000, 200, '1690349384_5945d8743f34e61a7166.jpeg', 'Kripik Pisang Rasa Asli', 15, 'Non Aktif'),
+(3, 'Kripik Pisang Goreng Kriuk', 5000, 150, '1690348405_a87f99c53a109b38ab87.jpg', 'Kripik Pisang Krispi', 5, 'Aktif'),
+(5, 'Kripik Pisang Goreng', 12000, 200, '1690947391_8c756dcac0a16b97d0ba.webp', 'Kripik Pisang yang renyah dan krispi', 3, 'Aktif'),
 (6, 'Kripik Pisang', 8000, 200, '1690947490_3521c84ea911727c1e66.jpg', 'Kripik Pisang yang renyah dan krispi', 20, 'Aktif'),
 (7, 'Paket Reseller 20 pcs Kripik Pisang Sale', 150000, 1500, '1691936448_2f1091fb230f6dcf9ee7.jpeg', 'Paket Reseller murah dan mendapatkan potongan harga jika dibandingkan anda membelinya per PCS', NULL, 'Aktif');
 
@@ -190,8 +162,8 @@ INSERT INTO `user` (`id_user`, `nama_user`, `username`, `email`, `password`, `no
 (2, 'coba', 'coba', 'coba@gmail.com', '123456', '89893843', 'Bekasi', NULL, NULL, NULL, NULL, ''),
 (3, 'coba', 'admin', 'antono@gmail.com', '123123', '898923', 'Bekasi', NULL, NULL, NULL, NULL, 'Admin'),
 (5, 'Yoga', 'yogs', 'septianyoga111@gmail.com', 'password', '08973343843933', 'Bekasi', 'Bekasi', 'Jawa Barat', 54, 9, 'User'),
-(7, 'Pembeli', 'pembeli', 'pembeli@gmail.com', 'password', '0899893489384', 'jl raya cikamurang padaasih cibogo', 'Kabupaten Bekasi', 'Jawa Barat', 54, 9, 'User'),
-(8, 'Susanti', 'reseller', 'reseller@gmail.com', 'password', '08953993894839', 'Jl. Raya Cikamurang Padaasih Cibogo', 'Kabupaten Subang', 'Jawa Barat', 428, 9, 'Reseller');
+(7, 'Pembeli', 'pembeli', 'pembeli@gmail.com', 'password', '0899893489384', 'jl raya cikamurang padaasih cibogo', 'Kabupaten Garut', 'Jawa Barat', 126, 9, 'User'),
+(8, 'Susanti', 'reseller', 'reseller@gmail.com', 'password', '08953993894839', 'Jl. Raya Cikamurang Padaasih Cibogo', 'Kabupaten Bekasi', 'Jawa Barat', 54, 9, 'Reseller');
 
 --
 -- Indexes for dumped tables
@@ -233,7 +205,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id_cart` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id_cart` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `produk`

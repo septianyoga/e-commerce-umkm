@@ -4,15 +4,17 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\ModelCart;
+use App\Models\ModelProduk;
 
 class Cart extends BaseController
 {
 
-    protected $ModelCart;
+    protected $ModelCart, $ModelProduk;
 
     public function __construct()
     {
         $this->ModelCart = new ModelCart();
+        $this->ModelProduk = new ModelProduk();
     }
 
     public function index()
@@ -27,12 +29,19 @@ class Cart extends BaseController
     public function add()
     {
         $cart = $this->ModelCart->where(['id_produk' => $this->request->getVar('id_produk'), 'id_order' => null, 'id_user' => session()->get('id_user')])->first();
+
+        $produk = $this->ModelProduk->find($this->request->getVar('id_produk'));
+
+
         if ($cart) {
+            if ($cart['qty'] >= $produk['stok_produk']) {
+                return 'Gagal';
+            }
             $this->ModelCart->update($cart['id_cart'], ['qty' => $cart['qty'] + 1]);
             $result = 'update';
         } else {
             $this->ModelCart->insert([
-                'id_produk' => $this->request->getPost('id_produk'),
+                'id_produk' => $this->request->getVar('id_produk'),
                 'qty' => 1,
                 'id_user' => session()->get('id_user')
             ]);

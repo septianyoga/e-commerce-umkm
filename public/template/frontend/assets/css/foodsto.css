@@ -14262,7 +14262,7 @@ th span {
 .banner-slider-3 .slider-2 {
   height: 180px;
   width: 200px;
-  background: url(../images/banner/banner-3-shap-2.png) no-repeat top center;
+  /* background: url(../images/banner/banner-3-shap-2.png) no-repeat top center; */
   position: absolute;
   top: 270px;
   left: 25%;

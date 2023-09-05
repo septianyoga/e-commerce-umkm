@@ -81,6 +81,7 @@ $routes->post('order', 'Order::insertOrder');
 $routes->get('order', 'Order::index');
 $routes->get('order/(:segment)/detail', 'Order::detail/$1');
 $routes->get('order/tes', 'Order::autoUbahStatus');
+$routes->post('order/updateExpired', 'Order::updateExpired');
 
 // page paket reseller
 $routes->get('paketreseller', 'PaketReseller::index');
@@ -92,6 +93,11 @@ $routes->post('pesanan/(:segment)/updateResi', 'Pesanan::updateResi/$1');
 
 // page laporan
 $routes->get('laporan', 'Laporan::index');
+$routes->post('laporan/cetak', 'Laporan::cetak');
+
+// page about
+$routes->get('about', 'Home::about');
+
 
 /*
  * --------------------------------------------------------------------

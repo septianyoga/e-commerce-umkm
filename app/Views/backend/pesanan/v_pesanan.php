@@ -6,7 +6,7 @@
             <div class="col-lg-12">
                 <div class="d-flex flex-wrap flex-wrap align-items-center justify-content-between mb-4">
                     <div>
-                        <h4 class="mb-3">Paket Reseller</h4>
+                        <h4 class="mb-3">Pesanan</h4>
                     </div>
                     <button type="button" class="btn btn-primary mt-2" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="las la-plus mr-1"></i>Tambah</button>
                 </div>
@@ -53,6 +53,10 @@
                                                 <a class="badge badge-info mr-2" title="Terima Pesanan" href="#" data-toggle="modal" data-target="#approv-<?= $row['id_order'] ?>">Approv</a>
                                             <?php } elseif ($row['status_pesanan'] == 'Dikemas') { ?>
                                                 <a class="badge badge-primary mr-2" title="Kirim Paket" href="#" data-toggle="modal" data-target="#kirim-<?= $row['id_order'] ?>">Kirim Paket</a>
+                                            <?php }
+                                            if ($row['tanggal_dikirim'] > date('Y-m-d H:i:s', strtotime('+14 days', strtotime($row['tanggal_dikirim'])))) { ?>
+                                                <a class="badge badge-success mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Lihat Detail" href="#">Pesanan Diterima</a>
+
                                             <?php } ?>
                                         </div>
                                     </td>
@@ -118,6 +122,11 @@
                                         <div class="form-group">
                                             <label>Masukan Nomor Resi Pesanan Jika Sudah Dikirimkan*</label>
                                             <input type="text" class="form-control" name="resi" placeholder="Masukan Resi Pengiriman" data-errors="Please Enter Name." required>
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Masukan Tanggal Paket Diserahkan Ke Kurir*</label>
+                                            <input type="date" class="form-control" name="tanggal_dikirim" placeholder="Masukan Resi Pengiriman" data-errors="Please Enter Name." value="<?= date('Y-m-d') ?>" required>
                                             <div class="help-block with-errors"></div>
                                         </div>
                                     </div>

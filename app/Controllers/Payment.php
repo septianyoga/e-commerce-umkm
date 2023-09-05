@@ -5,18 +5,20 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\ModelCart;
 use App\Models\ModelOrders;
+use App\Models\ModelProduk;
 use App\Models\ModelUser;
 
 class Payment extends BaseController
 {
 
-    private $ModelCart, $ModelOrders, $ModelUser;
+    private $ModelCart, $ModelOrders, $ModelUser, $ModelProduk;
 
     public function __construct()
     {
         $this->ModelCart = new ModelCart();
         $this->ModelOrders = new ModelOrders();
         $this->ModelUser = new ModelUser();
+        $this->ModelProduk = new ModelProduk();
     }
 
     public function index()
@@ -187,6 +189,14 @@ class Payment extends BaseController
                 'status' =>  '202',
                 'message'   => 'Payment Expired'
             ];
+            // update balikin stok produk lagi
+            $cart_produk = $this->ModelCart->join('produk', 'produk.id_produk = cart.id_produk')->where('id_order', $this->request->getVar('order_id'))->findAll();
+            foreach ($cart_produk as $dt) {
+                if ($dt['stok_produk'] != null) {
+                    $sisa_stok = $dt['stok_produk'] + $dt['qty'];
+                    $this->ModelProduk->update($dt['id_produk'], ['stok_produk' => $sisa_stok]);
+                }
+            }
             return json_encode($success);
         }
 

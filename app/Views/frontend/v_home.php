@@ -3,7 +3,7 @@
 
 <div class="banner section-padding-120 pb-0" id="home-1">
     <div class="slider-image" id="banner-slider-image">
-        <div class="slider-2" style="background: url(<?= base_url('asset/foto/pisang.png') ?>) no-repeat top center !important;"></div>
+        <div class="slider-2"></div>
         <div class="slider-3"></div>
         <div class="slider-4"></div>
         <div class="slider-5"></div>
@@ -34,7 +34,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 rounded-circle d-flex align-items-center text-center justify-content-center" id="banner-image-bg" style="background: rgba(255, 255, 255, 0.5) no-repeat scroll center center; background-size:contain; min-height: 550px; width: 550px;">
+            <div class="col-md-6 rounded-circle d-flex align-items-center text-center justify-content-center" id="banner-image-bg" style="background: rgba(255, 255, 255, 0.3) no-repeat scroll center center; background-size:contain; min-height: 550px; width: 550px;">
                 <img alt="img" src="<?= base_url('asset/foto/kripik-baner.png') ?>" id="banner-image" class="img-fluid mx-auto d-block">
             </div>
         </div>
@@ -114,89 +114,18 @@
         </div>
     </div>
 </div>
-<div class="services-banner pb-0 section-padding-120 position-relative">
-    <img src="<?= base_url('template/frontend/') ?>assets/images/banner/banner-shap-2.png" class="background-img background-img-4 img-fluid" data-iq-gsap="onStart" data-iq-position-x="150" data-iq-rotate="90" data-iq-ease="power.inOut" alt="banner2">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 position-relative">
-                <div class="services-container  iq-box-shadow" data-iq-gsap="onStart" data-iq-position-x="-150" data-iq-rotate="0" data-iq-trigger="scroll" data-iq-ease="power.inOut">
-                    <div class="iq-product-offer-block overflow-hidden rounded position-relative">
-                        <div class="iq-offer-img">
-                            <div class="iq-offer-back-img">
-                            </div>
-                        </div>
-                        <div class="iq-offer-info  overflow-hidden position-relative d-flex align-items-center p-4 align-content-center flex-wrap text-white w-100">
-                            <span class="iq-offer-sub d-block text-primary w-100">Organically Produce</span>
-                            <h5 class="iq-offer-title d-block  w-100 mb-4">Vegetables</h5>
-                            <a class="" href="javascript:void(0)">
-                                <div class="btn btn-secondary animation-btn">
-                                    Shop Now
-                                    <i aria-hidden="true" class="fas fa-long-arrow-alt-right ms-2"></i>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 position-relative">
-                <div class="services-container  iq-box-shadow" data-iq-gsap="onStart" data-iq-position-y="50" data-iq-rotate="0" data-iq-trigger="scroll" data-iq-ease="power.inOut">
-                    <div class="iq-product-offer-block overflow-hidden rounded position-relative">
-                        <div class="iq-offer-img">
-                            <div class="iq-offer-back-img iq-offer-back-img-2">
-                            </div>
-                        </div>
-                        <div class="iq-offer-info  overflow-hidden position-relative d-flex align-items-center p-4 align-content-center flex-wrap text-white w-100">
-                            <span class="iq-offer-sub d-block text-primary w-100">Flat 30% off</span>
-                            <h5 class="iq-offer-title d-block  w-100 mb-4">Fresh Foods</h5>
-                            <div class="iq-btn-container d-block w-100">
-                                <a class="" href="javascript:void(0)">
-                                    <div class="btn btn-secondary animation-btn">
-                                        Shop Now
-                                        <i aria-hidden="true" class="fas fa-long-arrow-alt-right ms-2"></i>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 position-relative">
-                <div class="services-container  iq-box-shadow" data-iq-gsap="onStart" data-iq-position-x="150" data-iq-rotate="0" data-iq-trigger="scroll" data-iq-ease="power.inOut">
-                    <div class="iq-product-offer-block overflow-hidden rounded position-relative">
-                        <div class="iq-offer-img">
-                            <div class="iq-offer-back-img iq-offer-back-img-3">
-                            </div>
-                        </div>
-                        <div class="iq-offer-info  overflow-hidden position-relative d-flex align-items-center p-4 align-content-center flex-wrap text-white w-100">
-                            <span class="iq-offer-sub d-block text-primary w-100">Gluten-free</span>
-                            <h5 class="iq-offer-title d-block  w-100 mb-4">Super Salads</h5>
-                            <div class="iq-btn-container d-block w-100">
-                                <a class="" href="javascript:void(0)">
-                                    <div class="btn btn-secondary animation-btn">
-                                        Shop Now
-                                        <i aria-hidden="true" class="fas fa-long-arrow-alt-right ms-2"></i>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 <div class="section-padding-120 position-relative">
     <img src="<?= base_url('template/frontend/') ?>assets/images/banner/shap-8.png" class="background-img background-img-5 img-fluid" data-iq-gsap="onStart" data-iq-position-x="150" data-iq-rotate="90" data-iq-ease="power.inOut" alt="shap-8">
     <img src="<?= base_url('template/frontend/') ?>assets/images/banner/shap-10.png" class="background-img background-img-6 img-fluid" data-iq-gsap="onStart" data-iq-position-x="150" data-iq-rotate="90" data-iq-ease="power.inOut" alt="shap-10">
     <div class="container">
         <div class="scrolling-text text-center">
             <div data-iq-gsap="onStart" data-iq-opacity="1" data-iq-position-x="200" data-iq-trigger="scroll" data-iq-scroll-scrub="true" data-iq-ease="power.inOut">
-                Products
+                Produk
             </div>
         </div>
         <div class="iq-title-box text-center">
-            <span class="iq-subtitle">Organically Produced</span>
-            <h3 class="iq-title">New Organic Add-ons</h3>
+            <span class="iq-subtitle">Rasa Original</span>
+            <h3 class="iq-title">Produk Kami</h3>
             <div class="iq-title-divider"></div>
         </div>
         <div class="row">
@@ -1493,7 +1422,14 @@
                     'id_produk': id_produk
                 },
                 success: function(response) {
-                    console.log(response)
+                    if (response == 'Gagal') {
+                        Swal.fire(
+                            'Gagal!',
+                            'Stok Tidak Mencukupi',
+                            'error'
+                        )
+                    }
+                    // console.log(response)
                     getCountCart()
                     getAllCart()
                 }

@@ -17,12 +17,16 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <div id="iq-menu-container" class="menu-main-menu-container">
                             <ul id="top-menu" class="navbar-nav">
-                                <li class="active ">
+                                <li class="<?= $title == 'Home' ? 'active' : '' ?> ">
                                     <a href="<?= base_url('/') ?>">Home
                                     </a>
                                 </li>
-                                <li class=" ">
+                                <li class="<?= $title == 'Pesanan' ? 'active' : '' ?> ">
                                     <a href="<?= base_url('order') ?>">Pesanan
+                                    </a>
+                                </li>
+                                <li class="<?= $title == 'About' ? 'active' : '' ?> ">
+                                    <a href="<?= base_url('about') ?>">About
                                     </a>
                                 </li>
                                 <!-- <li class="">
