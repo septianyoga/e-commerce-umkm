@@ -17,7 +17,7 @@
                     <h2 class="title"><?= $title ?></h2>
                     <ol class="breadcrumb main-bg">
                         <li class="breadcrumb-item">
-                            <a href="<?= base_url('/') ?>"><i class="fas fa-home me-2"></i>Home</a>
+                            <a onclick="showLoading()" href="<?= base_url('/') ?>"><i class="fas fa-home me-2"></i>Home</a>
                         </li>
                         <li class="breadcrumb-item"><?= $title ?></li>
                     </ol>
@@ -36,7 +36,7 @@
                             <div class="col-lg-6 col-md-6">
                                 <div class="card card-product">
                                     <div class="card-body">
-                                        <a href="<?= base_url('order/' . $row['id_order']) . '/detail' ?>">
+                                        <a onclick="showLoading()" href="<?= base_url('order/' . $row['id_order']) . '/detail' ?>">
                                             <div class="d-flex align-items-center">
                                                 <div class="iq-product-img iq-product-image me-3">
                                                     <?php foreach ($produk as $val) {

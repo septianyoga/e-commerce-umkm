@@ -90,6 +90,7 @@ $routes->get('paketreseller', 'PaketReseller::index');
 $routes->get('pesanan', 'Pesanan::index');
 $routes->get('pesanan/(:segment)/approv', 'Pesanan::approv/$1');
 $routes->post('pesanan/(:segment)/updateResi', 'Pesanan::updateResi/$1');
+$routes->get('pesanan/(:segment)', 'Pesanan::detail/$1');
 
 // page laporan
 $routes->get('laporan', 'Laporan::index');

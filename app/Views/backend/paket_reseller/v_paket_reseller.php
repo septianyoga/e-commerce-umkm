@@ -56,8 +56,8 @@
                                     <td><?= $row['status_produk'] ?></td>
                                     <td>
                                         <div class="d-flex align-items-center list-action">
-                                            <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View" href="<?= base_url('produk/' . $row['id_produk']) ?>">Detail</a>
-                                            <a class="badge bg-success mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="<?= base_url('produk/' . $row['id_produk'] . '/ubah') ?>">Ubah</a>
+                                            <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View" onclick="showLoading()" href="<?= base_url('produk/' . $row['id_produk']) ?>">Detail</a>
+                                            <a class="badge bg-success mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" onclick="showLoading()" href="<?= base_url('produk/' . $row['id_produk'] . '/ubah') ?>">Ubah</a>
                                             <a class="badge bg-warning mr-2" href="#" data-toggle="modal" data-target="#del-<?= $row['id_produk'] ?>">Hapus</a>
                                         </div>
                                     </td>
@@ -157,7 +157,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                    <button type="sumbit" class="btn btn-primary">Tambah Paket Produk</button>
+                    <button type="sumbit" class="btn btn-primary" onclick="showLoading()">Tambah Paket Produk</button>
                 </div>
             </form>
         </div>
@@ -180,7 +180,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <a href="<?= base_url('produk/' . $val['id_produk'] . '/hapus') ?>" class="btn btn-danger">Ya, Hapus</a>
+                    <a href="<?= base_url('produk/' . $val['id_produk'] . '/hapus') ?>" onclick="showLoading()" class="btn btn-danger">Ya, Hapus</a>
                 </div>
             </div>
         </div>

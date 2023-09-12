@@ -8,7 +8,7 @@
                     <div>
                         <h4 class="mb-3">List Produk</h4>
                     </div>
-                    <a href="<?= base_url('produk/tambah_produk') ?>" class="btn btn-primary add-list"><i class="las la-plus mr-1"></i>Tambah</a>
+                    <a href="<?= base_url('produk/tambah_produk') ?>" onclick="showLoading()" class="btn btn-primary add-list"><i class="las la-plus mr-1"></i>Tambah</a>
                 </div>
             </div>
             <div class="col-lg-12">

@@ -66,8 +66,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-primary mr-2">Tambah Produk</button>
-                            <a href="<?= base_url('produk') ?>" class="btn btn-secondary">Kembali</a>
+                            <button onclick="showLoading()" type="submit" class="btn btn-primary mr-2">Tambah Produk</button>
+                            <a href="<?= base_url('produk') ?>" onclick="showLoading()" class="btn btn-secondary">Kembali</a>
                         </form>
                     </div>
                 </div>

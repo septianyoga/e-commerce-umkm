@@ -8,7 +8,6 @@
                     <div>
                         <h4 class="mb-3">Pesanan</h4>
                     </div>
-                    <button type="button" class="btn btn-primary mt-2" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="las la-plus mr-1"></i>Tambah</button>
                 </div>
             </div>
             <div class="col-lg-12">
@@ -48,7 +47,7 @@
                                     <td><span class="badge badge-<?= $row['status_pesanan'] == 'Selesai' ? 'success' : ($row['status_pesanan'] == 'Menunggu Pembayaran' ? 'secondary' : ($row['status_pesanan'] == 'Pending' ? 'warning' : ($row['status_pesanan'] == 'Expired' ? 'danger' : ' border border-success text-success'))) ?>"><?= $row['status_pesanan'] == 'Selesai' ? 'Selesai Dibayar' : $row['status_pesanan'] ?></span></td>
                                     <td>
                                         <div class="d-flex align-items-center list-action">
-                                            <a class="badge badge-success mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Lihat Detail" href="#">Detail</a>
+                                            <a class="badge badge-success mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Lihat Detail" href="<?= base_url('pesanan/' . $row['id_order']) ?>">Detail</a>
                                             <?php if ($row['status_pesanan'] == 'Selesai') { ?>
                                                 <a class="badge badge-info mr-2" title="Terima Pesanan" href="#" data-toggle="modal" data-target="#approv-<?= $row['id_order'] ?>">Approv</a>
                                             <?php } elseif ($row['status_pesanan'] == 'Dikemas') { ?>
@@ -92,7 +91,7 @@
                                 <div class="card-footer border-0">
                                     <div class="d-flex flex-wrap align-items-ceter justify-content-end">
                                         <div class="btn btn-outline-primary mr-3" data-dismiss="modal">Batal</div>
-                                        <a href="<?= base_url('pesanan/' . $val['id_order'] . '/approv') ?>" class="btn btn-primary">Ya, Terima</a>
+                                        <a onclick="showLoading()" href="<?= base_url('pesanan/' . $val['id_order'] . '/approv') ?>" class="btn btn-primary">Ya, Terima</a>
                                     </div>
                                 </div>
                             </div>
@@ -134,7 +133,7 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                                <button type="sumbit" class="btn btn-primary">Simpan</button>
+                                <button type="sumbit" onclick="showLoading()" class="btn btn-primary">Simpan</button>
                             </div>
                         </form>
                     </div>
@@ -144,61 +143,5 @@
     </div>
 <?php } ?>
 
-<!-- modal tambah -->
-<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Tambah Paket Reseller</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <form action="<?= base_url('produk/add') ?>" data-toggle="validator" method="post" enctype="multipart/form-data">
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Nama Paket *</label>
-                                <input type="text" class="form-control" name="nama_produk" placeholder="Contoh : Paket Reseller 20 pcs Kripik Pisang Sale" data-errors="Please Enter Name." required>
-                                <div class="help-block with-errors"></div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Harga Perpaket* <small>(Tidak Memakai Titik)</small></label>
-                                <input type="number" class="form-control" name="harga_produk" placeholder="Contoh : 100000" data-errors="Please Enter Code." required>
-                                <div class="help-block with-errors"></div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Foto Paket Produk *</label>
-                                <input type="file" class="form-control image-file" name="foto_produk">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Berat Paket* (satuan gram)</label>
-                                <input type="number" class="form-control" name="berat" placeholder="Contoh : 1000" data-errors="Please Enter Code." required>
-                                <div class="help-block with-errors"></div>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label>Deskripsi Paket Produk</label>
-                                <textarea class="form-control" rows="4" name="deskripsi_produk" placeholder="Masukan Deskripsi Paket Produk" required></textarea>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                    <button type="sumbit" class="btn btn-primary">Tambah Paket Produk</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
 
 <?= $this->endSection() ?>

@@ -20,10 +20,102 @@
     <!-- sweet alert -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-default@4/default.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <style>
+        .lds-ellipsis {
+            display: flex;
+            position: fixed;
+            width: 80px;
+            height: 80px;
+            z-index: 99999;
+            margin: auto;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            /* min-height: 100vh; */
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(84, 98, 111, 0.5);
 
+        }
+
+        .lds-ellipsis div {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: 33px;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            background: #1d1c1c;
+            animation-timing-function: cubic-bezier(0, 1, 1, 0);
+        }
+
+        .lds-ellipsis div:nth-child(1) {
+            left: 8px;
+            animation: lds-ellipsis1 0.6s infinite;
+        }
+
+        .lds-ellipsis div:nth-child(2) {
+            left: 8px;
+            animation: lds-ellipsis2 0.6s infinite;
+        }
+
+        .lds-ellipsis div:nth-child(3) {
+            left: 32px;
+            animation: lds-ellipsis2 0.6s infinite;
+        }
+
+        .lds-ellipsis div:nth-child(4) {
+            left: 56px;
+            animation: lds-ellipsis3 0.6s infinite;
+        }
+
+        @keyframes lds-ellipsis1 {
+            0% {
+                transform: scale(0);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes lds-ellipsis3 {
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(0);
+            }
+        }
+
+        @keyframes lds-ellipsis2 {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(24px, 0);
+            }
+        }
+
+        .bg-load {
+            background-color: rgba(84, 98, 111, 0.5);
+            /* position: absolute; */
+        }
+    </style>
 </head>
 
 <body class="  ">
+    <div class="lds-ellipsis" id="spinner">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
     <?php if (session()->getFlashdata('pesan')) { ?>
         <script>
             Swal.fire(
@@ -122,7 +214,7 @@
                                                 <a href="javascript:void(0)"><i class="fa fa-home"></i><span>Kp. Cijengkol RT 03 RW 02 Desa Cijengkol, Kec. Serangpanjang, Kab. Subang</span></a>
                                             </li>
                                             <li>
-                                                <a href=""><i class="fa fa-envelope"></i><span>rasaalami@gmail.com</span></a>
+                                                <a href="mailto:rasaalami.official@gmail.com"><i class="fa fa-envelope"></i><span>rasaalami.official@gmail.com</span></a>
                                             </li>
                                             <li>
                                                 <a href=""><i class="fa fa-phone"></i><span>62888888888888</span></a>
@@ -266,6 +358,16 @@
         </script>
     <?php } ?>
 
+    <script>
+        window.onload = function() {
+            document.getElementById("spinner").style.display = "none";
+        }
+    </script>
+    <script>
+        function showLoading() {
+            document.getElementById("spinner").style.display = "block";
+        }
+    </script>
 </body>
 
 </html>

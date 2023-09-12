@@ -164,7 +164,7 @@
             <div class="container">
                 <div class="row align-items-center justify-content-center height-self-center">
                     <div class="col-lg-8">
-                        <h2 class="mb-2 text-center">UMKM Rasa Alami</h2>
+                        <h2 class="mb-2 text-center"><span class="text-success">UMKM</span> <span class="text-secondary">Rasa Alami</span></h2>
                         <div class="card auth-card ">
                             <div class="card-body p-0">
                                 <div class="d-flex align-items-center auth-content">
@@ -198,12 +198,12 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-12">
-                                                        <a href="auth-recoverpw.html" class="text-primary float-right">Lupa Password?</a>
+                                                        <a href="auth-recoverpw.html" class="text-success float-right">Lupa Password?</a>
                                                     </div>
                                                 </div>
                                                 <button type="submit" class="btn btn-warning">Log in</button>
                                                 <p class="mt-3">
-                                                    Belum Mempunyai Akun ? <a href="<?= base_url('auth/regist') ?>" class="text-primary" onclick="showLoading()">Daftar Sekarang.</a>
+                                                    Belum Mempunyai Akun ? <a href="<?= base_url('auth/regist') ?>" class="text-success" onclick="showLoading()">Daftar Sekarang.</a>
                                                 </p>
                                             </form>
                                         </div>

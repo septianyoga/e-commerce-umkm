@@ -8,7 +8,7 @@
                     <h1 class="title"><?= $title ?></h1>
                     <ol class="breadcrumb main-bg">
                         <li class="breadcrumb-item">
-                            <a href="<?= base_url('/') ?>"><i class="fas fa-home me-2"></i>Home</a>
+                            <a onclick="showLoading()" href="<?= base_url('/') ?>"><i class="fas fa-home me-2"></i>Home</a>
                         </li>
                         <li class="breadcrumb-item active">Checkout</li>
                     </ol>
@@ -33,7 +33,7 @@
                                 <div class="col-lg-6">
                                     <h3 class="mb-3">Alamat Pengiriman</h3>
                                     <div class="d-flex justify-content-end">
-                                        <a href="<?= base_url('auth/edit_alamat') ?>" class="btn btn-primary btn-sm text-white">Edit Alamat</a>
+                                        <a onclick="showLoading()" href="<?= base_url('auth/edit_alamat') ?>" class="btn btn-primary btn-sm text-white">Edit Alamat</a>
                                     </div>
                                     <!-- <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                         Edit Alamat
@@ -144,7 +144,7 @@
         </div>
     </div>
 </div>
-<form action="<?= base_url('order') ?>" method="post" id="form_bayar">
+<form action="<?= base_url('order') ?>" method="post" id="form_bayar" onsubmit="showLoading()">
     <input type="hidden" name="total_pembayaran" id="form_total_pembayaran">
     <input type="hidden" name="kurir" id="form_kurir">
     <input type="hidden" name="ongkir" id="form_ongkir">

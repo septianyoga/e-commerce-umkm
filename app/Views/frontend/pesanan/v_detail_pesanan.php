@@ -17,7 +17,7 @@
                     <h2 class="title"><?= $title ?></h2>
                     <ol class="breadcrumb main-bg">
                         <li class="breadcrumb-item">
-                            <a href="<?= base_url('order') ?>"><i class="fas fa-home me-2"></i>Pesanan</a>
+                            <a onclick="showLoading()" href="<?= base_url('order') ?>"><i class="fas fa-home me-2"></i>Pesanan</a>
                         </li>
                         <li class="breadcrumb-item"><?= $title ?></li>
                     </ol>

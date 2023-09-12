@@ -27,7 +27,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="<?= base_url('produk') ?>" class="btn btn-secondary mt-2"><i class="fa fa-arrow-left" aria-hidden="true"></i> Kembali</a>
+                        <a href="<?= base_url('produk') ?>" onclick="showLoading()" class="btn btn-secondary mt-2"><i class="fa fa-arrow-left" aria-hidden="true"></i> Kembali</a>
                     </div>
                 </div>
             </div>

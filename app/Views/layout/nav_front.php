@@ -4,7 +4,7 @@
             <div class="col-sm-12">
                 <nav class="navbar navbar-expand-xl navbar-light menu py-0">
                     <div class="logo_block align-items-center d-flex">
-                        <a class="navbar-brand" href="<?= base_url('/') ?>">
+                        <a class="navbar-brand" onclick="showLoading()" href="<?= base_url('/') ?>">
                             <!-- <img class="img-fluid logo" src="<?= base_url('template/frontend/') ?>assets/images/logo.png" alt="foodsto"> -->
                             <!-- <img class="img-fluid  logo-sticky" src="<?= base_url('template/frontend/') ?>assets/images/logo.png" alt="foodsto"> -->
                             <h4 class="my-0 text-center text-primary">UMKM</h4>
@@ -18,15 +18,15 @@
                         <div id="iq-menu-container" class="menu-main-menu-container">
                             <ul id="top-menu" class="navbar-nav">
                                 <li class="<?= $title == 'Home' ? 'active' : '' ?> ">
-                                    <a href="<?= base_url('/') ?>">Home
+                                    <a onclick="showLoading()" href="<?= base_url('/') ?>">Home
                                     </a>
                                 </li>
                                 <li class="<?= $title == 'Pesanan' ? 'active' : '' ?> ">
-                                    <a href="<?= base_url('order') ?>">Pesanan
+                                    <a onclick="showLoading()" href="<?= base_url('order') ?>">Pesanan
                                     </a>
                                 </li>
                                 <li class="<?= $title == 'About' ? 'active' : '' ?> ">
-                                    <a href="<?= base_url('about') ?>">About
+                                    <a onclick="showLoading()" href="<?= base_url('about') ?>">About
                                     </a>
                                 </li>
                                 <!-- <li class="">
@@ -119,7 +119,7 @@
                                                         </a>
                                                     </div> -->
                                                     <div class=" iq-button-viewcart iq-button-checkout w-100 text-center">
-                                                        <a href="<?= base_url('checkout') ?>" class="text-white">
+                                                        <a onclick="showLoading()" href="<?= base_url('checkout') ?>" class="text-white">
                                                             <div class="d-flex justify-content-center align-items-center">
                                                                 <span class="me-1 iq-button-effact">
                                                                     CHECKOUT
@@ -136,9 +136,9 @@
                                     </div>
                                 </div>
                             </li>
-                            <li>
-                                <div class="wishlist_count">
-                                    <a href="<?= base_url('template/frontend/') ?>wishlist.html" data-count="0">
+                            <li class="d-none">
+                                <div class="wishlist_count ">
+                                    <a onclick="showLoading()" href="<?= base_url('template/frontend/') ?>wishlist.html" data-count="0">
                                         <i class="fa fa-heart"></i>
                                         <span class="wcount">0</span>
                                     </a>
@@ -157,13 +157,13 @@
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-mini-cart" style="margin-left: -10px !important;">
                                             <div class="widget_shopping_cart_content">
-                                                <a href="<?= base_url('auth/logout') ?>" class="text-center d-flex justify-content-center align-items-center">Logout <i class="bi bi-box-arrow-right ms-1 fs-6"></i></a>
+                                                <a onclick="showLoading()" href="<?= base_url('auth/logout') ?>" class="text-center d-flex justify-content-center align-items-center">Logout <i class="bi bi-box-arrow-right ms-1 fs-6"></i></a>
                                             </div>
                                         </div>
                                     </li>
                                 <?php } else { ?>
                                     <li class="">
-                                        <a href="<?= base_url('auth ') ?>">
+                                        <a onclick="showLoading()" href="<?= base_url('auth ') ?>">
                                             Login
                                             <i class="bi bi-box-arrow-in-right"></i>
                                         </a>

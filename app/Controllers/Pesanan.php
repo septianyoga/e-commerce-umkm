@@ -3,15 +3,17 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Models\ModelCart;
 use App\Models\ModelOrders;
 
 class Pesanan extends BaseController
 {
-    private $ModelPesanan;
+    private $ModelPesanan, $ModelCart;
 
     public function __construct()
     {
         $this->ModelPesanan = new ModelOrders();
+        $this->ModelCart = new ModelCart();
     }
 
 
@@ -21,6 +23,16 @@ class Pesanan extends BaseController
         return view('backend/pesanan/v_pesanan', [
             'title' => 'Pesanan',
             'data'  => $this->ModelPesanan->select(['orders.*', 'user.nama_user'])->join('user', 'user.id_user = orders.id_user')->orderBy('tanggal', 'DESC')->findAll()
+        ]);
+    }
+
+    public function detail($id_order)
+    {
+        // dd($this->ModelPesanan->select(['orders.*', 'user.nama_user'])->join('user', 'user.id_user = orders.id_user')->orderBy('tanggal', 'DESC')->findAll());
+        return view('backend/pesanan/v_detail_pesanan', [
+            'title' => 'Pesanan',
+            'data'  => $this->ModelPesanan->select(['orders.*', 'user.nama_user', 'user.alamat'])->join('user', 'user.id_user = orders.id_user')->orderBy('tanggal', 'DESC')->find($id_order),
+            'produk'    => $this->ModelCart->join('produk', 'cart.id_produk = produk.id_produk')->findAll()
         ]);
     }
 
