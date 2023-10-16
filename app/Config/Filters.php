@@ -39,6 +39,9 @@ class Filters extends BaseConfig
                     '/payment/pay',
                     '/product/*',
                     '/about',
+                    '/galeri',
+                    '/galery',
+                    '/download_mobileapp',
                 ]
             ],
         ],
@@ -54,6 +57,9 @@ class Filters extends BaseConfig
                     '/pesanan/*',
                     '/laporan',
                     '/laporan/*',
+                    '/kelola_galeri',
+                    '/kelola_galeri/*',
+                    '/kelola_galeri/del/*',
                 ]
             ],
             'filteruser' => [
@@ -72,11 +78,12 @@ class Filters extends BaseConfig
                     '/cekongkir/*',
                     '/order',
                     '/order/*',
-                    '/order',
-                    '/order/*',
+                    '/order/*/*',
                     '/auth/edit_alamat',
                     '/auth/getKota',
                     '/about',
+                    '/galeri',
+                    '/download_mobileapp',
                 ]
             ],
         ],

@@ -14,6 +14,7 @@ class Pesanan extends BaseController
     {
         $this->ModelPesanan = new ModelOrders();
         $this->ModelCart = new ModelCart();
+        date_default_timezone_set('Asia/Jakarta');
     }
 
 
@@ -46,5 +47,11 @@ class Pesanan extends BaseController
     {
         $this->ModelPesanan->update($id_order, $this->request->getPost());
         return redirect()->to(base_url('pesanan'))->with('success', 'Resi Berhasil Diupload!.');
+    }
+
+    public function terimaPesanan($id_order)
+    {
+        $this->ModelPesanan->update($id_order, ['status_pesanan' => 'Diterima']);
+        return redirect()->to(base_url('pesanan'))->with('success', 'Status Pesanan Berhasil Diubah!.');
     }
 }

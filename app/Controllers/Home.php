@@ -3,17 +3,20 @@
 namespace App\Controllers;
 
 use App\Models\ModelCart;
+use App\Models\ModelGaleri;
 use App\Models\ModelProduk;
 
 class Home extends BaseController
 {
 
-    private $ModelProduk, $ModelCart;
+    private $ModelProduk, $ModelCart, $ModelGaleri;
 
     public function __construct()
     {
+        helper('download');
         $this->ModelProduk = new ModelProduk();
         $this->ModelCart = new ModelCart();
+        $this->ModelGaleri = new ModelGaleri();
     }
 
     public function index()
@@ -40,5 +43,22 @@ class Home extends BaseController
             'title' => 'About',
             'cart'  => session()->get('id_user') == null ? null : $this->ModelCart->join('produk', 'produk.id_produk = cart.id_produk')->where('cart.id_user', session()->get('id_user'))->findAll()
         ]);
+    }
+
+    public function galeri()
+    {
+        return view('frontend/galeri/v_galeri', [
+            'title' => 'Galeri',
+            'cart'  => session()->get('id_user') == null ? null : $this->ModelCart->join('produk', 'produk.id_produk = cart.id_produk')->where('cart.id_user', session()->get('id_user'))->findAll(),
+            'data'  => $this->ModelGaleri->findAll()
+        ]);
+    }
+
+    public function download()
+    {
+        $data = file_get_contents(base_url('asset/apk/RasaAlami.apk'));
+        $nama = 'RasaAlami.apk';
+
+        return $this->response->download($nama, $data);
     }
 }

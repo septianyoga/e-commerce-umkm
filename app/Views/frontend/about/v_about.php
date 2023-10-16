@@ -36,7 +36,7 @@
                 <p>Kami menyediakan produk yang dapat dibeli satuan atau pun perpaket jika anda mendaftarkan akun sebagai reseller.
                 </p>
                 <p>Silahkan pesan produk kami dan lakukan pemesanan hanya menggunakan 1 website saja. Atau dapat menghubungi via WhatsApp berikut:</p>
-                <a target="_blank" onclick="showLoading()" href="https://api.whatsapp.com/send?phone=6295330930059&text=Halo%20kak%2C%20Aku%20mau%20pesen%20kripik%20pisangnya%20dong..." class="btn btn-primary text-white"><i class="bi bi-whatsapp text-white"></i> WhatsApp</a>
+                <a target="_blank" onclick="showLoading()" href="https://api.whatsapp.com/send?phone=6285221779826&text=Halo%20Bu%2C%20Aku%20mau%20pesen%20Sale%20pisangnya%20dong..." class="btn btn-primary text-white"><i class="bi bi-whatsapp text-white"></i> WhatsApp</a>
             </div>
             <div class="col-lg-4" data-iq-gsap="onStart" data-iq-position-x="150" data-iq-rotate="0" data-iq-trigger="scroll" data-iq-ease="power.inOut">
                 <div class="about-img">

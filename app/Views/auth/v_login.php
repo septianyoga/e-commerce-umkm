@@ -205,6 +205,7 @@
                                                 <p class="mt-3">
                                                     Belum Mempunyai Akun ? <a href="<?= base_url('auth/regist') ?>" class="text-success" onclick="showLoading()">Daftar Sekarang.</a>
                                                 </p>
+                                                <a class="text-warning" href="<?= base_url('/') ?>"><i class="ri-arrow-left-line"></i> Kembali ke halaman utama</a>
                                             </form>
                                         </div>
                                     </div>

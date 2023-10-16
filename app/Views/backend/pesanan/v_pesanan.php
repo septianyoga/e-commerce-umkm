@@ -53,6 +53,9 @@
                                             <?php } elseif ($row['status_pesanan'] == 'Dikemas') { ?>
                                                 <a class="badge badge-primary mr-2" title="Kirim Paket" href="#" data-toggle="modal" data-target="#kirim-<?= $row['id_order'] ?>">Kirim Paket</a>
                                             <?php }
+                                            if ($row['status_pesanan'] == 'Dikirim') { ?>
+                                                <a class="badge badge-warning mr-2" title="Pesanan Diterima" href="#" data-toggle="modal" data-target="#pesananterima-<?= $row['id_order'] ?>">Terima Pesanan</a>
+                                            <?php }
                                             if ($row['tanggal_dikirim'] > date('Y-m-d H:i:s', strtotime('+14 days', strtotime($row['tanggal_dikirim'])))) { ?>
                                                 <a class="badge badge-success mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Lihat Detail" href="#">Pesanan Diterima</a>
 
@@ -92,6 +95,38 @@
                                     <div class="d-flex flex-wrap align-items-ceter justify-content-end">
                                         <div class="btn btn-outline-primary mr-3" data-dismiss="modal">Batal</div>
                                         <a onclick="showLoading()" href="<?= base_url('pesanan/' . $val['id_order'] . '/approv') ?>" class="btn btn-primary">Ya, Terima</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php } ?>
+<?php foreach ($data as $val) { ?>
+    <!-- Modal pesanan diterima -->
+    <div class="modal fade" id="pesananterima-<?= $val['id_order'] ?>" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="popup text-left">
+                        <div class="media align-items-top justify-content-between">
+                            <h3 class="mb-3">Pesanan Diterima</h3>
+                            <div class="btn-cancel p-0" data-dismiss="modal"><i class="las la-times"></i></div>
+                        </div>
+                        <div class="content edit-notes">
+                            <div class="card card-transparent card-block card-stretch event-note mb-0">
+                                <div class="card-body px-0 bukmark">
+                                    <div id="quill-toolbar1">
+                                        <p>Yakin ingin merubah status pesanan diterima untuk <b><?= $val['nama_user'] ?> </b>?</p>
+                                    </div>
+                                </div>
+                                <div class="card-footer border-0">
+                                    <div class="d-flex flex-wrap align-items-ceter justify-content-end">
+                                        <div class="btn btn-outline-primary mr-3" data-dismiss="modal">Batal</div>
+                                        <a onclick="showLoading()" href="<?= base_url('pesanan/' . $val['id_order'] . '/terima_pesanan') ?>" class="btn btn-primary">Ya, Tentu</a>
                                     </div>
                                 </div>
                             </div>

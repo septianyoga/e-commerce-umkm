@@ -7,7 +7,7 @@
     <title><?= $title ?> | UMKM Rasa Alami</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="<?= base_url('template/frontend/') ?>assets/images/favicon.ico" />
+    <link rel="shortcut icon" href="<?= base_url('asset/foto/logo-umkm.png') ?>" />
 
     <!-- Library / Plugin Css Build -->
     <link rel="stylesheet" href="<?= base_url('template/frontend/') ?>assets/css/libs.min.css">
@@ -187,6 +187,8 @@
                                         <li class="menu-item"><a href="<?= base_url('/') ?>"><i class="fas fa-chevron-right me-2"></i>Home</a></li>
                                         <li class="menu-item"><a href="<?= base_url('checkout') ?>"><i class="fas fa-chevron-right me-2"></i>Checkout</a></li>
                                         <li class="menu-item"><a href="<?= base_url('order') ?>"><i class="fas fa-chevron-right me-2"></i>Pesanan</a></li>
+                                        <li class="menu-item"><a href="<?= base_url('about') ?>"><i class="fas fa-chevron-right me-2"></i>About Us</a></li>
+                                        <li class="menu-item"><a href="<?= base_url('galeri') ?>"><i class="fas fa-chevron-right me-2"></i>Galeri</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -195,12 +197,8 @@
                             <div class="widget">
                                 <h5 class="footer-title">Information</h5>
                                 <div class="menu-footer2-container">
-                                    <ul id="menu-footer2" class="menu list-inline p-0 m-0">
-                                        <li class="menu-item"><a href="<?= base_url('about') ?>"><i class="fas fa-chevron-right me-2"></i>About Us</a></li>
-                                        <!-- <li class="menu-item"><a href="<?= base_url('template/frontend/') ?>our-team.html"><i class="fas fa-chevron-right me-2"></i>Our Team</a></li>
-                                        <li class="menu-item"><a href="<?= base_url('template/frontend/') ?>contact-us.html"><i class="fas fa-chevron-right me-2"></i>Contact Us</a></li>
-                                        <li class="menu-item"><a href="<?= base_url('template/frontend/') ?>blog/left-sidebar-blog.html"><i class="fas fa-chevron-right me-2"></i>Blog</a></li> -->
-                                    </ul>
+                                    <p>Kini Sudah Tersedia untuk Mobile.</p>
+                                    <a href="<?= base_url('download_mobileapp') ?>" class="text-secondary">*Klik Disini Untuk Mendownload*</a>
                                 </div>
                             </div>
                         </div>
@@ -217,7 +215,7 @@
                                                 <a href="mailto:rasaalami.official@gmail.com"><i class="fa fa-envelope"></i><span>rasaalami.official@gmail.com</span></a>
                                             </li>
                                             <li>
-                                                <a href=""><i class="fa fa-phone"></i><span>62888888888888</span></a>
+                                                <a href="https://api.whatsapp.com/send?phone=6285221779826&text=Halo%20Bu%2C%20Aku%20mau%20pesen%20Sale%20pisangnya%20dong..."><i class="fa fa-phone"></i><span>6285221779826</span></a>
                                             </li>
                                         </ul>
                                     </div>
@@ -239,7 +237,7 @@
             </div>
         </div>
 
-        <div id="back-to-top">
+        <div id="back-to-top" style="z-index: 999999 !important;">
             <a class="top" target="_blank" href="https://api.whatsapp.com/send?phone=6295330930059&text=Halo%20kak%2C%20Aku%20mau%20pesen%20kripik%20pisangnya%20dong...">
                 <i class="bi bi-whatsapp"></i>
             </a>
@@ -358,11 +356,13 @@
         </script>
     <?php } ?>
 
-    <script>
-        window.onload = function() {
-            document.getElementById("spinner").style.display = "none";
-        }
-    </script>
+    <?php if ($title != 'Checkout') { ?>
+        <script>
+            window.onload = function() {
+                document.getElementById("spinner").style.display = "none";
+            }
+        </script>
+    <?php } ?>
     <script>
         function showLoading() {
             document.getElementById("spinner").style.display = "block";

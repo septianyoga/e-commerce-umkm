@@ -6,7 +6,7 @@
         <div class="slider-2"></div>
         <div class="slider-3"></div>
         <div class="slider-4"></div>
-        <div class="slider-5"></div>
+        <!-- <div class="slider-5"></div> -->
         <div class="slider-6"></div>
         <div class="slider-text">
             <div class="scrolling-text vertical-scroll text-center">
@@ -18,16 +18,15 @@
         <div class="row">
             <div class="col-md-6 align-self-center mt-mb-0 mb-4">
                 <div class="hero-left">
-                    <h2 id="banner-title"><span class="text-secondary">Kripik Pisang</span><br>
+                    <h2 id="banner-title"><span class="text-secondary">Sale Pisang</span><br>
 
                     </h2>
-                    <p id="banner-description">It Is a long established fact that a readerwill be <br>
-                        the readable content of a page
+                    <p id="banner-description">Rasa Alami Tanpa Pemanis Buatan
                     </p>
                     <div class="iq-btn-container" id="banner-action">
-                        <a href="javascript:void(0)">
+                        <a href="#produk">
                             <div class="btn btn-secondary animation-btn">
-                                View More
+                                Lihat
                                 <i aria-hidden="true" class="fas fa-long-arrow-alt-right ms-2"></i>
                             </div>
                         </a>
@@ -35,14 +34,15 @@
                 </div>
             </div>
             <style>
-                @media (min-width: 991px) {
+                @media (max-width: 991px) {
                     .hero-banner {
-                        height: 550px;
+                        height: 350px !important;
+                        /* width: 200px !important; */
                     }
                 }
             </style>
-            <div class="col-md-6 rounded-circle d-flex align-items-center text-center justify-content-center hero-banner" id="banner-image-bg" style="background: rgba(255, 255, 255, 0.3) no-repeat scroll center center; background-size:contain; min-height: 400px; width: 550px;">
-                <img alt="img" src="<?= base_url('asset/foto/kripik-baner.png') ?>" id="banner-image" class="img-fluid mx-auto d-block">
+            <div class="col-md-6 rounded-circle d-flex align-items-center text-center justify-content-center hero-banner" id="banner-image-bg" style="background: rgba(255, 255, 255, 0.1) no-repeat scroll center center; background-size:contain; height: 550px; width: 550px;">
+                <img alt="img" src="<?= base_url('asset/foto/sale.png') ?>" id="banner-image" class="img-fluid mx-auto d-block" style="width: 500px !important; border-radius: 30px;">
             </div>
         </div>
     </div>
@@ -121,9 +121,9 @@
         </div>
     </div>
 </div>
-<div class="section-padding-120 position-relative">
-    <img src="<?= base_url('template/frontend/') ?>assets/images/banner/shap-8.png" class="background-img background-img-5 img-fluid" data-iq-gsap="onStart" data-iq-position-x="150" data-iq-rotate="90" data-iq-ease="power.inOut" alt="shap-8">
-    <div class="container">
+<div class="section-padding-120 position-relative" id="produk">
+    <img src="<?= base_url('template/frontend/') ?>assets/images/banner/kripik227.png" class="background-img background-img-5 img-fluid" data-iq-gsap="onStart" data-iq-position-x="150" data-iq-rotate="90" data-iq-ease="power.inOut" alt="shap-8">
+    <div class="container" id="produk">
         <div class="scrolling-text text-center">
             <div data-iq-gsap="onStart" data-iq-opacity="1" data-iq-position-x="200" data-iq-trigger="scroll" data-iq-scroll-scrub="true" data-iq-ease="power.inOut">
                 Produk
@@ -158,8 +158,8 @@
                                                         <i class="fas fa-star fa-xs me-1"></i>
                                                         <i class="fas fa-star fa-xs me-1"></i>
                                                         <i class="fas fa-star fa-xs me-1"></i>
-                                                        <i class="far fa-star fa-xs me-1"></i>
-                                                        <i class="far fa-star fa-xs me-1"></i>
+                                                        <i class="fas fa-star fa-xs me-1"></i>
+                                                        <i class="fas fa-star fa-xs me-1"></i>
                                                     </div>
                                                 </div>
                                             </div>
@@ -198,8 +198,8 @@
 </div>
 
 <section class="iq-testimonial bg-primary section-padding-120 position-relative">
-    <img src="<?= base_url('template/frontend/') ?>assets/images/banner/banner-shap-5.png" class="background-img background-img-10 img-fluid" data-iq-gsap="onStart" data-iq-position-x="150" data-iq-rotate="90" data-iq-ease="power.inOut" alt="banner-shap-5">
-    <img src="<?= base_url('template/frontend/') ?>assets/images/banner/dish-1.png" class="background-img background-img-11 img-fluid" data-iq-gsap="onStart" data-iq-position-x="150" data-iq-rotate="90" data-iq-ease="power.inOut" alt="dish-1">
+    <img src="<?= base_url('template/frontend/') ?>assets/images/banner/kripik227.png" class="background-img background-img-10 img-fluid" data-iq-gsap="onStart" data-iq-position-x="150" data-iq-rotate="90" data-iq-ease="power.inOut" alt="banner-shap-5">
+    <img src="<?= base_url('template/frontend/') ?>assets/images/banner/kripik227.png" class="background-img background-img-11 img-fluid" data-iq-gsap="onStart" data-iq-position-x="150" data-iq-rotate="90" data-iq-ease="power.inOut" alt="dish-1">
     <div class="container">
         <div class="scrolling-text text-center">
             <div data-iq-gsap="onStart" data-iq-opacity="1" data-iq-position-x="200" data-iq-trigger="scroll" data-iq-scroll-scrub="true" data-iq-ease="power.inOut">
@@ -348,8 +348,6 @@
             </ul>
         </div>
     </div>
-    <img src="<?= base_url('template/frontend/') ?>assets/images/banner/dish-1.png" class="background-img background-img-12 img-fluid" data-iq-gsap="onStart" data-iq-position-x="150" data-iq-rotate="90" data-iq-ease="power.inOut" alt="dish-1">
-    <img src="<?= base_url('template/frontend/') ?>assets/images/banner/shap-5.png" class="background-img background-img-13 img-fluid" data-iq-gsap="onStart" data-iq-position-x="150" data-iq-rotate="90" data-iq-ease="power.inOut" alt="shap-5">
 </section>
 
 

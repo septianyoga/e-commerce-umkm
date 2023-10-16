@@ -22,7 +22,7 @@ $routes->set404Override();
 // $routes->setAutoRoute(false);
 
 /*
- * --------------------------------------------------------------------
+* --------------------------------------------------------------------
  * Route Definitions
  * --------------------------------------------------------------------
  */
@@ -31,6 +31,9 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->get('product/(:num)', 'Home::product/$1');
+
+// page download mobile app
+$routes->get('download_mobileapp', 'Home::download');
 
 // page admin
 $routes->get('admin', 'Admin::index');
@@ -82,6 +85,7 @@ $routes->get('order', 'Order::index');
 $routes->get('order/(:segment)/detail', 'Order::detail/$1');
 $routes->get('order/tes', 'Order::autoUbahStatus');
 $routes->post('order/updateExpired', 'Order::updateExpired');
+$routes->get('order/(:segment)/terima_pesanan', 'Order::terimaPesanan/$1');
 
 // page paket reseller
 $routes->get('paketreseller', 'PaketReseller::index');
@@ -91,6 +95,7 @@ $routes->get('pesanan', 'Pesanan::index');
 $routes->get('pesanan/(:segment)/approv', 'Pesanan::approv/$1');
 $routes->post('pesanan/(:segment)/updateResi', 'Pesanan::updateResi/$1');
 $routes->get('pesanan/(:segment)', 'Pesanan::detail/$1');
+$routes->get('pesanan/(:segment)/terima_pesanan', 'Pesanan::terimaPesanan/$1');
 
 // page laporan
 $routes->get('laporan', 'Laporan::index');
@@ -98,6 +103,16 @@ $routes->post('laporan/cetak', 'Laporan::cetak');
 
 // page about
 $routes->get('about', 'Home::about');
+
+// page galeri
+$routes->get('galeri', 'Home::galeri');
+
+// page galeri admin
+$routes->get('kelola_galeri', 'Galeri::index');
+$routes->post('kelola_galeri', 'Galeri::tambah');
+$routes->post('kelola_galeri/(:num)', 'Galeri::edit/$1');
+$routes->get('kelola_galeri/del/(:num)', 'Galeri::hapus/$1');
+
 
 
 /*

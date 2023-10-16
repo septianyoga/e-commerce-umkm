@@ -15,6 +15,7 @@ class Checkout extends BaseController
     {
         $this->ModelCart = new ModelCart();
         $this->ModelUser = new ModelUser();
+        date_default_timezone_set('Asia/Jakarta');
     }
 
     public function index()

@@ -219,6 +219,7 @@
                 'kurir': 'jne'
             },
             success: function(response) {
+                document.getElementById("spinner").style.display = "none";
                 var rest = JSON.parse(response)
                 $('.pilih_ongkir').remove();
                 rest.rajaongkir.results[0].costs.forEach(element => {

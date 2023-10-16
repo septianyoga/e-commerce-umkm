@@ -108,6 +108,35 @@
                                     </div>
                                 </a> -->
                             </div>
+                        <?php } elseif ($detail['status_pesanan'] == 'Dikirim') { ?>
+                            <div class="col-lg-12">
+                                <div class="card card-product">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center pt-2">
+                                            <div class="iq-product-info w-100">
+                                                <h5>Status Pesanan : Dikirim</h5>
+                                                <div class="d-flex justify-content-between">
+                                                    <b>Nomor Resi :</b>
+                                                    <h5 class="text-primary"><?= $detail['resi'] ?></h5>
+                                                </div>
+                                                <div class="d-flex justify-content-between">
+                                                    <b>Tanggal Pesanan :</b>
+                                                    <h5 class="text-primary"><?= $detail['tanggal'] ?></h5>
+                                                </div>
+                                                <div class="d-flex justify-content-between">
+                                                    <b>Tanggal Dikirim :</b>
+                                                    <h5 class="text-primary"><?= $detail['tanggal_dikirim'] ?></h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p>Mohon klik tombol terima pesanan jika paket sudah sampai kepada anda.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 d-flex">
+                                <button onclick="document.location.href='<?= base_url('order/' . $detail['id_order'] . '/terima_pesanan') ?>'" class="btn btn-secondary w-100 fs-5 text-white mb-2"><strong>Terima Pesanan</strong></button>
+                            </div>
+
                         <?php } elseif ($detail['status_pesanan'] == 'Pending') { ?>
                             <div class="col-lg-12">
                                 <div class="card card-product">

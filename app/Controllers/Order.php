@@ -131,4 +131,10 @@ class Order extends BaseController
 
         return 'Berhasil Diubah';
     }
+
+    public function terimaPesanan($id_order)
+    {
+        $this->ModelOrders->update($id_order, ['status_pesanan' => 'Diterima']);
+        return redirect()->to(base_url('order/' . $id_order . '/detail'))->with('pesan', 'Pesanan Berhasil Diterima.');
+    }
 }

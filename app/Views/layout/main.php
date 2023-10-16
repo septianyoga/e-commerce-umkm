@@ -7,7 +7,7 @@
     <title><?= $title ?> | UMKM Rasa Alami</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="<?= base_url('template/backend/html/') ?>assets/images/favicon.ico" />
+    <link rel="shortcut icon" href="<?= base_url('asset/foto/logo-umkm.png') ?>" />
     <link rel="stylesheet" href="<?= base_url('template/backend/html/') ?>assets/css/backend-plugin.min.css">
     <link rel="stylesheet" href="<?= base_url('template/backend/html/') ?>assets/css/backend.css?v=1.0.0">
     <link rel="stylesheet" href="<?= base_url('template/backend/html/') ?>assets/vendors/@fortawesome/fontawesome-free/css/all.min.css">

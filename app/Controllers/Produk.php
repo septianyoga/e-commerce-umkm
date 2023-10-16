@@ -49,7 +49,7 @@ class Produk extends BaseController
             ],
             'foto_produk' => [
                 'label' => 'Foto Produk',
-                'rules' => 'uploaded[foto_produk]|max_size[foto_produk,1024]|mime_in[foto_produk,image/png,image/jpg,image/jpeg]',
+                'rules' => 'uploaded[foto_produk]|max_size[foto_produk,3072]|mime_in[foto_produk,image/png,image/jpg,image/jpeg]',
                 'errors' => [
                     'uploaded' => '{field} wajib diisi.',
                     'max_size' => '{field} Maksimal Ukurannya 1 MB',

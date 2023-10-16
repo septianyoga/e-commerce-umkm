@@ -29,6 +29,10 @@
                                     <a onclick="showLoading()" href="<?= base_url('about') ?>">About
                                     </a>
                                 </li>
+                                <li class="<?= $title == 'Galeri' ? 'active' : '' ?> ">
+                                    <a onclick="showLoading()" href="<?= base_url('galeri') ?>">Galeri
+                                    </a>
+                                </li>
                                 <!-- <li class="">
                                     <a href="javascript:void(0)" class="menu-item">Shop <i class="fas fa-chevron-down  toggledrop"></i></a>
                                     <ul class="sub-menu">

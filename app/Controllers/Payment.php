@@ -19,6 +19,7 @@ class Payment extends BaseController
         $this->ModelOrders = new ModelOrders();
         $this->ModelUser = new ModelUser();
         $this->ModelProduk = new ModelProduk();
+        date_default_timezone_set('Asia/Jakarta');
     }
 
     public function index()
